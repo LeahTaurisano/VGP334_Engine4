@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{AF5EDE68-FC3A-4AA8-BFE6-1AE9CD0C5441}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{4BDC85BC-2D4B-4BB1-8075-611D4C7173E0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Framework\Core\Core.vcxproj", "{FE43FAE6-2D45-450D-A80E-78B2E8703E25}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinterEngine", "Engine\WinterEngine\WinterEngine.vcxproj", "{BC8A934C-61A7-4B59-BAFF-788B7B26832A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VSProps", "VSProps", "{8E9FEC02-6016-4019-948B-53E19BD17B49}"
+	ProjectSection(SolutionItems) = preProject
+		VSProps\EngineLib.props = VSProps\EngineLib.props
+		VSProps\FrameworkLib.props = VSProps\FrameworkLib.props
+		VSProps\WinterEngine.props = VSProps\WinterEngine.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{7DBE77A2-CB1F-4007-8642-8F41DE1F2D87}"
+	ProjectSection(SolutionItems) = preProject
+		VSProps\Common\Common.props = VSProps\Common\Common.props
+		VSProps\Common\Library.props = VSProps\Common\Library.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Debug|x64.ActiveCfg = Debug|x64
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Debug|x64.Build.0 = Debug|x64
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Debug|x86.Build.0 = Debug|Win32
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Release|x64.ActiveCfg = Release|x64
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Release|x64.Build.0 = Release|x64
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Release|x86.ActiveCfg = Release|Win32
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25}.Release|x86.Build.0 = Release|Win32
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Debug|x64.ActiveCfg = Debug|x64
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Debug|x64.Build.0 = Debug|x64
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Debug|x86.ActiveCfg = Debug|Win32
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Debug|x86.Build.0 = Debug|Win32
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Release|x64.ActiveCfg = Release|x64
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Release|x64.Build.0 = Release|x64
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Release|x86.ActiveCfg = Release|Win32
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE43FAE6-2D45-450D-A80E-78B2E8703E25} = {4BDC85BC-2D4B-4BB1-8075-611D4C7173E0}
+		{BC8A934C-61A7-4B59-BAFF-788B7B26832A} = {AF5EDE68-FC3A-4AA8-BFE6-1AE9CD0C5441}
+		{7DBE77A2-CB1F-4007-8642-8F41DE1F2D87} = {8E9FEC02-6016-4019-948B-53E19BD17B49}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6F24B03-457C-4C19-B6A6-A4AF04583A64}
+	EndGlobalSection
+EndGlobal
