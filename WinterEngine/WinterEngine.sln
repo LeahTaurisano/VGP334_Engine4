@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{7DBE77
 		VSProps\Common\Library.props = VSProps\Common\Library.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VGP242", "VGP242", "{46C50479-3FE2-4CE1-842B-BC2B0D617002}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_HelloWindow", "VGP242\01_HelloWindow\01_HelloWindow.vcxproj", "{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -48,6 +52,14 @@ Global
 		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Release|x64.Build.0 = Release|x64
 		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Release|x86.ActiveCfg = Release|Win32
 		{BC8A934C-61A7-4B59-BAFF-788B7B26832A}.Release|x86.Build.0 = Release|Win32
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Debug|x64.ActiveCfg = Debug|x64
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Debug|x64.Build.0 = Debug|x64
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Debug|x86.ActiveCfg = Debug|Win32
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Debug|x86.Build.0 = Debug|Win32
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Release|x64.ActiveCfg = Release|x64
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Release|x64.Build.0 = Release|x64
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Release|x86.ActiveCfg = Release|Win32
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +68,7 @@ Global
 		{FE43FAE6-2D45-450D-A80E-78B2E8703E25} = {4BDC85BC-2D4B-4BB1-8075-611D4C7173E0}
 		{BC8A934C-61A7-4B59-BAFF-788B7B26832A} = {AF5EDE68-FC3A-4AA8-BFE6-1AE9CD0C5441}
 		{7DBE77A2-CB1F-4007-8642-8F41DE1F2D87} = {8E9FEC02-6016-4019-948B-53E19BD17B49}
+		{CAB3D668-F259-4D3B-A03C-CA7FA9D08395} = {46C50479-3FE2-4CE1-842B-BC2B0D617002}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6F24B03-457C-4C19-B6A6-A4AF04583A64}
