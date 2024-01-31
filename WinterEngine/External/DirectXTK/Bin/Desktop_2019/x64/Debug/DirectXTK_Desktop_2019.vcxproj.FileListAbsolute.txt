@@ -1,0 +1,1 @@
+D:\VGP242\WinterEngine\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
