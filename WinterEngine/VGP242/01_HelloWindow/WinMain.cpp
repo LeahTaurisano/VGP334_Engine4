@@ -1,6 +1,7 @@
 #include <WinterEngine/Inc/WinterEngine.h>
 
 using namespace WinterEngine;
+using namespace WinterEngine::Graphics;
 
 class MainState : public AppState
 {
@@ -8,6 +9,8 @@ public:
 	void Initialize()
 	{
 		LOG("MAIN STATE INITIALIZED");
+		GraphicsSystem::Get()->SetClearColor(Colors::Green);
+
 		mLifeTime = 2.0f;
 	}
 	void Terminate()
@@ -35,6 +38,7 @@ public:
 	void Initialize()
 	{
 		LOG("GAME STATE INITIALIZED");
+		GraphicsSystem::Get()->SetClearColor(Colors::Black);
 		mLifeTime = 2.0f;
 	}
 	void Terminate()

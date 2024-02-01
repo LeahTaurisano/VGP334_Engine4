@@ -4,6 +4,8 @@
 
 using namespace WinterEngine;
 using namespace WinterEngine::Core;
+using namespace WinterEngine::Graphics;
+using namespace WinterEngine::Input;
 
 void App::ChangeState(const std::string& stateName)
 {
@@ -26,6 +28,10 @@ void App::Run(const AppConfig& config)
 		config.winHeight
 	);
 	ASSERT(myWindow.IsActive(), "Failed to create a window");
+	auto handle = myWindow.GetWindowHandle();
+	GraphicsSystem::StaticInitialize(handle, false);
+	InputSystem::StaticInitialize(handle);
+	
 
 	ASSERT(mCurrentState != nullptr, "App: need an app state");
 	mCurrentState->Initialize();
@@ -34,8 +40,10 @@ void App::Run(const AppConfig& config)
 	while (mRunning)
 	{
 		myWindow.ProcessMessage();
+		InputSystem* input = InputSystem::Get();
+		input->Update();
 
-		if (!myWindow.IsActive())
+		if (!myWindow.IsActive() || input->IsKeyPressed(KeyCode::ESCAPE))
 		{
 			Quit();
 			break;
@@ -49,9 +57,16 @@ void App::Run(const AppConfig& config)
 		}
 		float deltaTime = TimeUtil::GetDeltaTime();
 		mCurrentState->Update(deltaTime);
+		GraphicsSystem* gs = GraphicsSystem::Get();
+		gs->BeginRender();
+		mCurrentState->Render();
+		gs->EndRender();
 	}
 
 	mCurrentState->Terminate();
+
+	InputSystem::StaticTerminate();
+	GraphicsSystem::StaticTerminate();
 	myWindow.Terminate();
 }
 
