@@ -2,21 +2,12 @@
 
 using namespace WinterEngine;
 using namespace WinterEngine::Graphics;
+using namespace WinterEngine::Input;
 
 void GameState::Initialize()
 {
 	//create a shape
-	mVertices.push_back({ {-0.3f, 0.3f, 0.0f}, Colors::LightYellow });
-	mVertices.push_back({ {0.0f, 0.9f, 0.0f}, Colors::LightGoldenrodYellow });
-	mVertices.push_back({ {0.3f, 0.3f, 0.0f}, Colors::Yellow });
-
-	mVertices.push_back({ {-0.6f, -0.3f, 0.0f}, Colors::LightYellow });
-	mVertices.push_back({ {-0.3f, 0.3f, 0.0f}, Colors::LightGoldenrodYellow });
-	mVertices.push_back({ {0.0f, -0.3f, 0.0f}, Colors::Yellow });
-
-	mVertices.push_back({ {0.0f, -0.3f, 0.0f}, Colors::LightYellow });
-	mVertices.push_back({ {0.3f, 0.3f, 0.0f}, Colors::LightGoldenrodYellow });
-	mVertices.push_back({ {0.6f, -0.3f, 0.0f}, Colors::Yellow });
+	CreateShape();
 
 	auto device = GraphicsSystem::Get()->GetDevice();
 	//create a way to send data to gpu
@@ -138,20 +129,89 @@ void GameState::Render()
 
 void TriangleState::Update(float deltaTime)
 {
-
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::TWO))
+	{
+		MainApp().ChangeState("SquareState");
+	}
+	else if (InputSystem::Get()->IsKeyPressed(KeyCode::THREE))
+	{
+		MainApp().ChangeState("StarState");
+	}
 }
 
 void TriangleState::CreateShape()
 {
+	mVertices.push_back({ {-0.3f, 0.3f, 0.0f}, Colors::LightYellow });
+	mVertices.push_back({ {0.0f, 0.9f, 0.0f}, Colors::LightGoldenrodYellow });
+	mVertices.push_back({ {0.3f, 0.3f, 0.0f}, Colors::Yellow });
 
+	mVertices.push_back({ {-0.6f, -0.3f, 0.0f}, Colors::LightYellow });
+	mVertices.push_back({ {-0.3f, 0.3f, 0.0f}, Colors::LightGoldenrodYellow });
+	mVertices.push_back({ {0.0f, -0.3f, 0.0f}, Colors::Yellow });
+
+	mVertices.push_back({ {0.0f, -0.3f, 0.0f}, Colors::LightYellow });
+	mVertices.push_back({ {0.3f, 0.3f, 0.0f}, Colors::LightGoldenrodYellow });
+	mVertices.push_back({ {0.6f, -0.3f, 0.0f}, Colors::Yellow });
 }
 
 void SquareState::Update(float deltaTime)
 {
-
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::ONE))
+	{
+		MainApp().ChangeState("TriangleState");
+	}
+	else if (InputSystem::Get()->IsKeyPressed(KeyCode::THREE))
+	{
+		MainApp().ChangeState("StarState");
+	}
 }
 
 void SquareState::CreateShape()
 {
+	for (int i = -10; i <= 10; ++i)
+	{
+		float x = (float)i / 10.0f;
+		for (int j = -10; j <= 10; j += 2)
+		{
+			float y = (float)j / 10.0f;
+			if (i % 2 != 0)
+			{
+				y += 0.1f;
+			}
+			mVertices.push_back({ {x, y, 0.0f}, Colors::Azure });
+			mVertices.push_back({ {x, y + 0.1f, 0.0f}, Colors::AntiqueWhite });
+			mVertices.push_back({ {x + 0.1f, y, 0.0f}, Colors::BlanchedAlmond });
 
+			mVertices.push_back({ {x, y + 0.1f, 0.0f}, Colors::Azure });
+			mVertices.push_back({ {x + 0.1f, y + 0.1f, 0.0f}, Colors::AntiqueWhite });
+			mVertices.push_back({ {x + 0.1f, y, 0.0f}, Colors::BlanchedAlmond });
+		}
+	}
+}
+
+void StarState::Update(float deltaTime)
+{
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::ONE))
+	{
+		MainApp().ChangeState("TriangleState");
+	}
+	else if (InputSystem::Get()->IsKeyPressed(KeyCode::TWO))
+	{
+		MainApp().ChangeState("SquareState");
+	}
+}
+
+void StarState::CreateShape()
+{
+	mVertices.push_back({ {0.5f, 0.3f, 0.0f}, Colors::Pink });
+	mVertices.push_back({ {0.0f, -0.195f, 0.0f}, Colors::LightPink });
+	mVertices.push_back({ {-0.5f, 0.3f, 0.0f}, Colors::FloralWhite });
+
+	mVertices.push_back({ {0.0f, 0.8f, 0.0f}, Colors::Pink });
+	mVertices.push_back({ {0.35f, -0.7f, 0.0f}, Colors::LightPink });
+	mVertices.push_back({ {-0.17f, 0.05f, 0.0f}, Colors::FloralWhite });
+
+	mVertices.push_back({ {0.0f, 0.8f, 0.0f}, Colors::Pink });
+	mVertices.push_back({ {0.17f, 0.05f, 0.0f}, Colors::FloralWhite });
+	mVertices.push_back({ {-0.35f, -0.7f, 0.0f}, Colors::LightPink });
 }

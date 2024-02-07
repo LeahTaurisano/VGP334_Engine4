@@ -41,3 +41,11 @@ public:
 protected:
 	void CreateShape() override;
 };
+
+class StarState : public GameState
+{
+public:
+	void Update(float deltaTime) override;
+protected:
+	void CreateShape() override;
+};
