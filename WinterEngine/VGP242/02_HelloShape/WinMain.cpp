@@ -13,7 +13,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int)
 	myApp.AddState<StarState>("StarState");
 
 	AppConfig config;
-	config.appName = L"Hello Window";
+	config.appName = L"Hello Shapes";
 
 	myApp.Run(config);
 	return(0);

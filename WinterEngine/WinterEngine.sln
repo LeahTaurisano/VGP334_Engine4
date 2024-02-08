@@ -45,7 +45,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shaders", "Shaders", "{E21E2606-7E10-4B5B-B705-6FE8BB5A193C}"
 	ProjectSection(SolutionItems) = preProject
 		Assets\Shaders\DoSomething.fx = Assets\Shaders\DoSomething.fx
+		Assets\Shaders\DoTransform.fx = Assets\Shaders\DoTransform.fx
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03_HelloCube", "VGP242\03_HelloCube\03_HelloCube.vcxproj", "{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +122,14 @@ Global
 		{3629F01A-6FED-42EB-B308-E9F7F1346EAF}.Release|x64.Build.0 = Release|x64
 		{3629F01A-6FED-42EB-B308-E9F7F1346EAF}.Release|x86.ActiveCfg = Release|Win32
 		{3629F01A-6FED-42EB-B308-E9F7F1346EAF}.Release|x86.Build.0 = Release|Win32
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Debug|x64.ActiveCfg = Debug|x64
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Debug|x64.Build.0 = Debug|x64
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Debug|x86.ActiveCfg = Debug|Win32
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Debug|x86.Build.0 = Debug|Win32
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Release|x64.ActiveCfg = Release|x64
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Release|x64.Build.0 = Release|x64
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Release|x86.ActiveCfg = Release|Win32
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +145,7 @@ Global
 		{4559B067-4DB2-46E7-823D-CB9FDFB4FCEB} = {46C50479-3FE2-4CE1-842B-BC2B0D617002}
 		{3629F01A-6FED-42EB-B308-E9F7F1346EAF} = {4BDC85BC-2D4B-4BB1-8075-611D4C7173E0}
 		{E21E2606-7E10-4B5B-B705-6FE8BB5A193C} = {F9E85EB0-CAC9-4892-92C1-600A0C5FE81D}
+		{84B7E128-0E1D-4AB6-B7B1-F7B1D2A13F05} = {46C50479-3FE2-4CE1-842B-BC2B0D617002}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6F24B03-457C-4C19-B6A6-A4AF04583A64}
