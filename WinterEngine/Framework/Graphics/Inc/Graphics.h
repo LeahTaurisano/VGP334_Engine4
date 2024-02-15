@@ -11,3 +11,6 @@
 #include "PixelShader.h"
 #include "Camera.h"
 #include "ConstantBuffer.h"
+#include "MeshBuilder.h"
+#include "Texture.h"
+#include "Sampler.h"
