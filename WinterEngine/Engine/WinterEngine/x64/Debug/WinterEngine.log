@@ -1,1 +1,5 @@
-﻿  WinterEngine.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\WinterEngine.lib
+﻿  Precompile.cpp
+  App.cpp
+  WinterEngine.cpp
+  Generating Code...
+  WinterEngine.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\WinterEngine.lib

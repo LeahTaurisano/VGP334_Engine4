@@ -21,3 +21,59 @@ protected:
 	WinterEngine::Graphics::Texture mTexture;
 	WinterEngine::Graphics::Sampler mSampler;
 };
+
+class CubeState : public GameState
+{
+public:
+	void Initialize() override;
+protected:
+	WinterEngine::Graphics::MeshPC mMesh;
+};
+
+class RectState : public GameState
+{
+public:
+	void Initialize() override;
+protected:
+	WinterEngine::Graphics::MeshPC mMesh;
+};
+
+class PlaneState : public GameState
+{
+public:
+	void Initialize() override;
+protected:
+	WinterEngine::Graphics::MeshPC mMesh;
+};
+
+class SphereState : public GameState
+{
+public:
+	void Initialize() override;
+protected:
+	WinterEngine::Graphics::MeshPC mMesh;
+};
+
+class CylinderState : public GameState
+{
+public:
+	void Initialize() override;
+protected:
+	WinterEngine::Graphics::MeshPC mMesh;
+};
+
+class SkyboxState : public GameState
+{
+public:
+	void Initialize() override;
+protected:
+	WinterEngine::Graphics::MeshPX mMesh;
+};
+
+class SkysphereState : public GameState
+{
+public:
+	void Initialize() override;
+protected:
+	WinterEngine::Graphics::MeshPX mMesh;
+};

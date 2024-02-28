@@ -1,1 +1,5 @@
-﻿  04_HelloMeshBuilder.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\04_HelloMeshBuilder.exe
+﻿  GameState.cpp
+  WinMain.cpp
+  Generating Code...
+  LINK : D:\VGP242\WinterEngine\x64\Debug\04_HelloMeshBuilder.exe not found or not built by the last incremental link; performing full link
+  04_HelloMeshBuilder.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\04_HelloMeshBuilder.exe
