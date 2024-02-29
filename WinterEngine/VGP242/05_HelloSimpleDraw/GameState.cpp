@@ -50,14 +50,12 @@ void GameState::Update(float deltaTime)
 }
 void GameState::Render()
 {
-	Matrix4 mat = Matrix4::Identity;
-	mat._42 = 1.0f;
-	/*SimpleDraw::AddLine({ 0.0f, 0.0f, 0.0f }, { 2.0f, 1.0f, 0.0f }, Colors::Green);
-	SimpleDraw::AddFace({ 0.0f, 0.0f, 0.0f }, { 2.0f, 1.0f, 0.0f }, { 2.0f, 0.0f, 0.0f }, Colors::Cyan);*/
+	//SimpleDraw::AddLine({ 0.0f, 0.0f, 0.0f }, { 2.0f, 1.0f, 0.0f }, Colors::Green);
+	//SimpleDraw::AddFace({ 0.0f, 0.0f, 0.0f }, { 2.0f, 1.0f, 0.0f }, { 2.0f, 0.0f, 0.0f }, Colors::Cyan);
 	//SimpleDraw::AddAABB({ -1.0f, -1.0f, -1.0f }, { 1.0f, 1.0f, 1.0f }, Colors::Pink);
-	//SimpleDraw::AddSphere(160, 60, 2.0f, Colors::Yellow);
-	SimpleDraw::AddGroundPlane(10, Colors::White);
+	//SimpleDraw::AddSphere(60, 60, 2.0f, Colors::Yellow);
+	//SimpleDraw::AddGroundPlane(10, Colors::White);
 	//SimpleDraw::AddGroundCircle(100, 2, Colors::White);
-	SimpleDraw::AddTransform(Matrix4::Identity);
+	//SimpleDraw::AddTransform(Matrix4::Identity);
 	SimpleDraw::Render(mCamera);
 }

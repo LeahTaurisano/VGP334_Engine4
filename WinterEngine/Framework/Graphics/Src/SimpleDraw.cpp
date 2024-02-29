@@ -70,9 +70,9 @@ namespace
 	{
 		if (mFaceVertexCount + 3 <= mMaxVertexCount)
 		{
-			mLineVertices[mFaceVertexCount++] = VertexPC{ v0, color };
-			mLineVertices[mFaceVertexCount++] = VertexPC{ v1, color };
-			mLineVertices[mFaceVertexCount++] = VertexPC{ v2, color };
+			mFaceVertices[mFaceVertexCount++] = VertexPC{ v0, color };
+			mFaceVertices[mFaceVertexCount++] = VertexPC{ v1, color };
+			mFaceVertices[mFaceVertexCount++] = VertexPC{ v2, color };
 		}
 	}
 	void SimpleDrawImpl::Render(const Camera& camera)
@@ -189,7 +189,7 @@ void SimpleDraw::AddFilledAABB(float minX, float minY, float minZ, float maxX, f
 
 	//top
 	AddFace(trb, trf, tlf, color);
-	AddFace(trb, tlb, tlb, color);
+	AddFace(trb, tlf, tlb, color);
 
 	//bottom
 	AddFace(brb, blf, brf, color);
@@ -275,7 +275,7 @@ void SimpleDraw::AddGroundCircle(uint32_t slices, float radius, const Color& col
 			0.0f,
 			radius * cos(rot0)
 		};
-		v0 = {
+		v1 = {
 			radius * sin(rot1),
 			0.0f,
 			radius * cos(rot1)
