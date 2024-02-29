@@ -6,5 +6,6 @@ D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp;D:\VGP242\WinterEn
 D:\VGP242\WinterEngine\Framework\Graphics\Src\PixelShader.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\PixelShader.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\Precompile.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\Precompile.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\Sampler.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\Sampler.obj
+D:\VGP242\WinterEngine\Framework\Graphics\Src\SimpleDraw.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\SimpleDraw.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\Texture.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\Texture.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\VertexShader.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\VertexShader.obj

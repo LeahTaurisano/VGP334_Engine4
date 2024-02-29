@@ -1,12 +1,2 @@
-﻿  MeshBuilder.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(80,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(115,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(141,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(166,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(226,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(285,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(311,23): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(335,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(367,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(404,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  SimpleDraw.cpp
   Graphics.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\Graphics.lib
