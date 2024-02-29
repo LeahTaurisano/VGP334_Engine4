@@ -1,2 +1,1 @@
-﻿  WinMain.cpp
-LINK : fatal error LNK1104: cannot open file 'C:\Users\LCV2242924\Desktop\VGP242\WinterEngine\x64\Debug\Graphics.lib'
+﻿  01_HelloWindow.vcxproj -> C:\Users\LCV2242924\Desktop\VGP242\WinterEngine\x64\Debug\01_HelloWindow.exe

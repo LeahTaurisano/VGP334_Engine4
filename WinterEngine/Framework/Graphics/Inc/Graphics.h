@@ -15,3 +15,5 @@
 #include "Texture.h"
 #include "Sampler.h"
 #include "SimpleDraw.h"
+#include "BlendState.h"
+#include "DebugUI.h"

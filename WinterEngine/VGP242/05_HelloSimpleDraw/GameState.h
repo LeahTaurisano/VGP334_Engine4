@@ -13,3 +13,33 @@ public:
 protected:
 	WinterEngine::Graphics::Camera mCamera;
 };
+
+class TransformState : public GameState
+{
+public:
+	void Render() override;
+};
+
+class SphereState : public GameState
+{
+public:
+	void Render() override;
+};
+
+class AABBState : public GameState
+{
+public:
+	void Render() override;
+};
+
+class AABBFilledState : public GameState
+{
+public:
+	void Render() override;
+};
+
+class LinesState : public GameState
+{
+public:
+	void Render() override;
+};
