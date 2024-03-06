@@ -1,5 +1,7 @@
+D:\VGP242\WinterEngine\Framework\Graphics\Src\BlendState.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\BlendState.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\Camera.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\Camera.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\ConstantBuffer.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\ConstantBuffer.obj
+D:\VGP242\WinterEngine\Framework\Graphics\Src\DebugUI.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\DebugUI.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\GraphicsSystem.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\GraphicsSystem.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuffer.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\MeshBuffer.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\MeshBuilder.obj

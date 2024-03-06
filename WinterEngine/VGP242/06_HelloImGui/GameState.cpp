@@ -53,30 +53,61 @@ void GameState::Render()
 	
 }
 
-bool buttonOn = false;
 void GameState::DebugUI()
 {
 	ImGui::Begin("DebugUI", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
 	DebugUI::SetTheme(DebugUI::Theme::Dark);
-	ImGui::LabelText("Title", "Hello ImGui");
-	if (ImGui::Button("Button"))
+	ImGui::LabelText("Debug Manager", "Hello ImGui");
+	if (ImGui::Button("Debug On"))
 	{
-		buttonOn = !buttonOn;
+		mDebugOn = !mDebugOn;
 	}
-	if (buttonOn)
+	if (mDebugOn)
 	{
-		ImGui::LabelText("ButtonOn", "Button Pressed");
+		ImGui::LabelText("DebugOn", "Showing Debug Plane");
+	}
+
+	int value = (int)mCurrentShape;
+	if (ImGui::Combo("ActiveShape", &value, shapeType, 3))
+	{
+		mCurrentShape = (Shapes)value;
+		if (mCurrentShape == Shapes::AABB)
+		{
+			mIsCircle = false;
+		}
+		else
+		{
+			mIsCircle = true;
+		}
 	}
 	if (ImGui::CollapsingHeader("Info", ImGuiTreeNodeFlags_DefaultOpen))
 	{
-		ImGui::DragFloat("SphereAlpha", &mSphereAlpha, 0.01f, 0.0f, 1.0f);
-		ImGui::DragFloat3("TransformPos", &mPosition.x, 0.01f, -2.0f, 2.0f);
+		ImGui::DragFloat("SphereAlpha", &mAlpha, 0.01f, 0.0f, 1.0f);
+		ImGui::ColorEdit4("ShapeColor", &mShapeColor.r);
+		//ImGui::DragFloat3("TransformPos", &mPosition.x, 0.01f, -2.0f, 2.0f);
+		if (mIsCircle)
+		{
+			ImGui::DragFloat("CircleRadius", &mRadius, 0.01f, 0.1f, 3.0f);
+		}
+		else
+		{
+			ImGui::DragFloat3("AABBSize", &mAABBSize.x, 0.01f, 0.1f, 3.0f);
+		}
 	}
-
 	ImGui::End();
 
-	SimpleDraw::AddTransform(Math::Matrix4::Translation(mPosition));
-	SimpleDraw::AddGroundPlane(10, Colors::White);
-	SimpleDraw::AddSphere(60, 60, 1.0f, { 1.0f, 1.0f, 0.0f, mSphereAlpha });
+	mShapeColor.a = mAlpha;
+	switch (mCurrentShape)
+	{
+	case Shapes::Sphere: SimpleDraw::AddSphere(60, 60, mRadius, mShapeColor); break;
+	case Shapes::AABB: SimpleDraw::AddAABB(-mAABBSize, mAABBSize, mShapeColor); break;
+	case Shapes::Circle: SimpleDraw::AddGroundCircle(60, mRadius, mShapeColor); break;
+	}
+	if (mDebugOn)
+	{
+		SimpleDraw::AddGroundPlane(10, Colors::White);
+		SimpleDraw::AddTransform(Math::Matrix4::Translation({ 0.0f, 0.0f, 0.0f }));
+	}
+	
 	SimpleDraw::Render(mCamera);
 }
