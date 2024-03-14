@@ -11,7 +11,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int)
 	myApp.AddState<GameState>("GameState");
 
 	AppConfig config;
-	config.appName = L"Hello Mesh Builder";
+	config.appName = L"Hello Solar System";
 
 	myApp.Run(config);
 	return(0);
