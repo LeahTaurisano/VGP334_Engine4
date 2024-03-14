@@ -15,6 +15,7 @@ Planet::Planet(uint32_t slices, uint32_t rings, float radius, float distance, fl
 	mRotationSpeed = rotation;
 	mOrbit = 0;
 	mOrbitSpeed = orbit;
+	mDrawOrbit = true;
 }
 
 void Planet::Terminate()

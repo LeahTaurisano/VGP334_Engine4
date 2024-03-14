@@ -1,3 +1,1 @@
-﻿  RenderTarget.cpp
-C:\Users\LCV2242924\Desktop\VGP242\WinterEngine\Framework\Graphics\Src\RenderTarget.cpp(82,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
-  Graphics.vcxproj -> C:\Users\LCV2242924\Desktop\VGP242\WinterEngine\x64\Debug\Graphics.lib
+﻿  Graphics.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\Graphics.lib
