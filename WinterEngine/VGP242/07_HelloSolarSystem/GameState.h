@@ -10,6 +10,7 @@ public:
 	void Terminate() override;
 	void Update(float deltaTime) override;
 	void Render() override;
+	void DebugUI() override;
 
 protected:
 	WinterEngine::Graphics::Camera mCamera;
@@ -32,4 +33,6 @@ protected:
 	Planet mUranus;
 	Planet mNeptune;
 	Planet mPluto;
+
+	float mTimeMod = 1.0f;
 };

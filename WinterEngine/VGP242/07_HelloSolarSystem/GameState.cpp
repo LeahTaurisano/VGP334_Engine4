@@ -13,16 +13,16 @@ void GameState::Initialize()
 	mSkysphereMeshBuffer.Initialize(mSkysphereMesh);
 	mSkysphereTexture.Initialize(L"../../Assets/Images/skysphere/space.jpg");
 
-	mSun = Planet(100, 100, 100.0f, 0.0f, L"../../Assets/Images/planets/sun.jpg");
-	mMercury = Planet(100, 100, 0.333f, 157.0f, L"../../Assets/Images/planets/mercury.jpg");
-	mVenus = Planet(100, 100, 0.87f, 208.0f, L"../../Assets/Images/planets/venus.jpg");
-	mEarth = Planet(100, 100, 1.0f, 249.0f, L"../../Assets/Images/planets/earth/earth.jpg");
-	mMars = Planet(100, 100, 0.5f, 328.0f, L"../../Assets/Images/planets/mars.jpg");
-	mJupiter = Planet(100, 100, 11.0f, 878.0f, L"../../Assets/Images/planets/jupiter.jpg");
-	mSaturn = Planet(100, 100, 9.0f, 1430.0f, L"../../Assets/Images/planets/saturn.jpg");
-	mUranus = Planet(100, 100, 4.0f, 2870.0f, L"../../Assets/Images/planets/uranus.jpg");
-	mNeptune = Planet(100, 100, 3.7f, 4500.0f, L"../../Assets/Images/planets/neptune.jpg");
-	mPluto = Planet(100, 100, 0.2f, 5910.0f, L"../../Assets/Images/planets/pluto.jpg");
+	mSun =     Planet(100, 100, 100.0f,    0.0f,    1.0f / 2.3f,          1.0f, L"../../Assets/Images/planets/sun.jpg");
+	mMercury = Planet(100, 100, 0.333f,  157.0f,    1.0f / 4.0f,          4.0f, L"../../Assets/Images/planets/mercury.jpg");
+	mVenus =   Planet(100, 100,  0.87f,  208.0f, -(1.0f /16.2f),          1.6f, L"../../Assets/Images/planets/venus.jpg");
+	mEarth =   Planet(100, 100,   1.0f,  249.0f,          15.0f,          1.0f, L"../../Assets/Images/planets/earth/earth.jpg");
+	mMars =    Planet(100, 100,   0.5f,  328.0f,          15.3f,   1.0f / 1.8f, L"../../Assets/Images/planets/mars.jpg");
+	mJupiter = Planet(100, 100,  11.0f,  878.0f,          33.0f,  1.0f / 11.8f, L"../../Assets/Images/planets/jupiter.jpg");
+	mSaturn =  Planet(100, 100,   9.0f, 1430.0f,          31.5f,  1.0f / 29.4f, L"../../Assets/Images/planets/saturn.jpg");
+	mUranus =  Planet(100, 100,   4.0f, 2870.0f,          21.0f,  1.0f / 84.0f, L"../../Assets/Images/planets/uranus.jpg");
+	mNeptune = Planet(100, 100,   3.7f, 4500.0f,          22.5f, 1.0f / 164.0f, L"../../Assets/Images/planets/neptune.jpg");
+	mPluto =   Planet(100, 100,   0.2f, 5910.0f,           2.5f, 1.0f / 147.0f, L"../../Assets/Images/planets/pluto.jpg");
 
 	std::filesystem::path shaderFilePath = L"../../Assets/Shaders/DoTexturing.fx";
 	mConstantBuffer.Initialize(sizeof(Math::Matrix4));
@@ -86,16 +86,16 @@ void GameState::Update(float deltaTime)
 		mCamera.Pitch(input->GetMouseMoveY() * turnSpeed * deltaTime);
 	}
 
-	mSun.Update(deltaTime, 1.0f/35.0f, 1.0f);
-	mMercury.Update(deltaTime, 1.0f/59.0f, 4.0f);
-	mVenus.Update(deltaTime, -(1.0f/243.0f), 1.6f);
-	mEarth.Update(deltaTime, 1.0f, 1.0f);
-	mMars.Update(deltaTime, 1.05f, 1.0f / 1.8f);
-	mJupiter.Update(deltaTime, 2.2f, 1.0f / 11.8f);
-	mSaturn.Update(deltaTime, 2.1f, 1.0f / 29.4f);
-	mUranus.Update(deltaTime, 1.4f, 1.0f / 84.0f);
-	mNeptune.Update(deltaTime, 1.5f, 1.0f / 164.0f);
-	mPluto.Update(deltaTime, 1.0f/6.0f, 1.0f / 147.0f);
+	mSun.Update(deltaTime * mTimeMod);
+	mMercury.Update(deltaTime * mTimeMod);
+	mVenus.Update(deltaTime * mTimeMod);
+	mEarth.Update(deltaTime * mTimeMod);
+	mMars.Update(deltaTime * mTimeMod);
+	mJupiter.Update(deltaTime * mTimeMod);
+	mSaturn.Update(deltaTime * mTimeMod);
+	mUranus.Update(deltaTime * mTimeMod);
+	mNeptune.Update(deltaTime * mTimeMod);
+	mPluto.Update(deltaTime * mTimeMod);
 }
 void GameState::Render()
 {
@@ -123,4 +123,97 @@ void GameState::Render()
 	mUranus.Render(mConstantBuffer, matView, matProj);
 	mNeptune.Render(mConstantBuffer, matView, matProj);
 	mPluto.Render(mConstantBuffer, matView, matProj);
+
+	SimpleDraw::Render(mCamera);
+}
+
+void GameState::DebugUI()
+{
+	ImGui::Begin("DebugUI", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
+	DebugUI::SetTheme(DebugUI::Theme::Dark);
+	ImGui::LabelText("Debug Manager", "Solar System");
+	ImGui::DragFloat("Time Scale", &mTimeMod, 0.1f, 1.0f, 100.0f);
+	
+	if (ImGui::Button("Mercury Orbit"))
+	{
+		mMercury.SetDrawOrbit(!mMercury.GetDrawOrbit());
+	}
+	if (mMercury.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mMercury.GetOrbit(), Colors::Red);
+	}
+
+	if (ImGui::Button("Venus Orbit"))
+	{
+		mVenus.SetDrawOrbit(!mVenus.GetDrawOrbit());
+	}
+	if (mVenus.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mVenus.GetOrbit(), Colors::OrangeRed);
+	}
+
+	if (ImGui::Button("Earth Orbit"))
+	{
+		mEarth.SetDrawOrbit(!mEarth.GetDrawOrbit());
+	}
+	if (mEarth.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mEarth.GetOrbit(), Colors::Orange);
+	}
+
+	if (ImGui::Button("Mars Orbit"))
+	{
+		mMars.SetDrawOrbit(!mMars.GetDrawOrbit());
+	}
+	if (mMars.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mMars.GetOrbit(), Colors::Yellow);
+	}
+
+	if (ImGui::Button("Jupiter Orbit"))
+	{
+		mJupiter.SetDrawOrbit(!mJupiter.GetDrawOrbit());
+	}
+	if (mJupiter.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mJupiter.GetOrbit(), Colors::Green);
+	}
+
+	if (ImGui::Button("Saturn Orbit"))
+	{
+		mSaturn.SetDrawOrbit(!mSaturn.GetDrawOrbit());
+	}
+	if (mSaturn.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mSaturn.GetOrbit(), Colors::Teal);
+	}
+
+	if (ImGui::Button("Uranus Orbit"))
+	{
+		mUranus.SetDrawOrbit(!mUranus.GetDrawOrbit());
+	}
+	if (mUranus.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mUranus.GetOrbit(), Colors::Blue);
+	}
+
+	if (ImGui::Button("Neptune Orbit"))
+	{
+		mNeptune.SetDrawOrbit(!mNeptune.GetDrawOrbit());
+	}
+	if (mNeptune.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mNeptune.GetOrbit(), Colors::Indigo);
+	}
+
+	if (ImGui::Button("Pluto Orbit"))
+	{
+		mPluto.SetDrawOrbit(!mPluto.GetDrawOrbit());
+	}
+	if (mPluto.GetDrawOrbit())
+	{
+		SimpleDraw::AddGroundCircle(1000, mPluto.GetOrbit(), Colors::Violet);
+	}
+
+	ImGui::End();
 }

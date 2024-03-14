@@ -4,7 +4,7 @@ Planet::Planet()
 {
 }
 
-Planet::Planet(uint32_t slices, uint32_t rings, float radius, float distance, std::filesystem::path filePath)
+Planet::Planet(uint32_t slices, uint32_t rings, float radius, float distance, float rotation, float orbit, std::filesystem::path filePath)
 {
 	mMesh = MeshBuilder::CreateSpherePX(slices, rings, radius);
 	mMeshBuffer.Initialize(mMesh);
@@ -12,7 +12,9 @@ Planet::Planet(uint32_t slices, uint32_t rings, float radius, float distance, st
 
 	mPosition = { 0.0f, 0.0f, distance };
 	mRotation = 0;
+	mRotationSpeed = rotation;
 	mOrbit = 0;
+	mOrbitSpeed = orbit;
 }
 
 void Planet::Terminate()
@@ -21,14 +23,14 @@ void Planet::Terminate()
 	mTexture.Terminate();
 }
 
-void Planet::Update(float deltaTime, float rotationSpeed, float orbitSpeed)
+void Planet::Update(float deltaTime)
 {
-	mRotation += rotationSpeed * deltaTime;
+	mRotation += mRotationSpeed * deltaTime;
 	while (mRotation > 360)
 	{
 		mRotation -= 360;
 	}
-	mOrbit += orbitSpeed * deltaTime;
+	mOrbit += mOrbitSpeed * deltaTime;
 	while (mOrbit > 360)
 	{
 		mOrbit -= 360;
@@ -48,4 +50,19 @@ void Planet::Render(ConstantBuffer constantBuffer, Math::Matrix4 matView, Math::
 	constantBuffer.Update(&wvp);
 
 	mMeshBuffer.Render();
+}
+
+void Planet::SetDrawOrbit(bool state)
+{
+	mDrawOrbit = state;
+}
+
+bool Planet::GetDrawOrbit()
+{
+	return mDrawOrbit;
+}
+
+float Planet::GetOrbit()
+{
+	return mPosition.z;
 }
