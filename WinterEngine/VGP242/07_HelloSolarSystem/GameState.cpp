@@ -132,7 +132,7 @@ void GameState::DebugUI()
 	ImGui::Begin("DebugUI", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
 	DebugUI::SetTheme(DebugUI::Theme::Dark);
 	ImGui::LabelText("Debug Manager", "Solar System");
-	ImGui::DragFloat("Time Scale", &mTimeMod, 0.1f, 1.0f, 100.0f);
+	ImGui::DragFloat("Time Scale", &mTimeMod, 0.1f, -100.0f, 100.0f);
 	
 	if (ImGui::Button("Mercury Orbit"))
 	{
