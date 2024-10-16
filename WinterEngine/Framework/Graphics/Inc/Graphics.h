@@ -22,3 +22,5 @@
 #include "Transform.h"
 #include "StandardEffect.h"
 #include "TextureCache.h"
+#include "DirectionalLight.h"
+#include "Material.h"

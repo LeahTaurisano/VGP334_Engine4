@@ -16,4 +16,5 @@ protected:
 	std::vector<WinterEngine::Graphics::RenderObject> mPlanets;
 
 	WinterEngine::Graphics::StandardEffect mStandardEffect;
+	WinterEngine::Graphics::DirectionalLight mDirectionalLight;
 };

@@ -1,5 +1,2 @@
-﻿  ConstantBuffer.cpp
-  SimpleDraw.cpp
-  StandardEffect.cpp
-  Generating Code...
-  Graphics.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP242\WinterEngine\x64\Debug\Graphics.lib
+﻿  StandardEffect.cpp
+  Graphics.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\Graphics.lib
