@@ -20,15 +20,15 @@ void GameState::Initialize()
 	{
 		RenderObject& planet = mPlanets.emplace_back();
 		planet.meshBuffer.Initialize(mesh);
-		planet.diffuseMapId = TextureCache::Get()->LoadTexture("StrangeOrb/Metal_Pattern_008_metallic.png");
-		planet.normalMapId = TextureCache::Get()->LoadTexture("StrangeOrb/Metal_Pattern_008_normal.png");
-		//planet.specMapId = TextureCache::Get()->LoadTexture("planets/earth/earth_spec.jpg");
-		planet.bumpMapId = TextureCache::Get()->LoadTexture("StrangeOrb/Metal_Pattern_008_height.png");
+		planet.diffuseMapId = TextureCache::Get()->LoadTexture("planets/earth/earth.jpg");
+		planet.normalMapId = TextureCache::Get()->LoadTexture("planets/earth/earth_normal.jpg");
+		planet.specMapId = TextureCache::Get()->LoadTexture("planets/earth/earth_spec.jpg");
+		planet.bumpMapId = TextureCache::Get()->LoadTexture("planets/earth/earth_bump.jpg");
 		planet.transform.position.x = xPos;
 		++xPos;
 	}
 
-	std::filesystem::path shaderFilePath = L"../../Assets/Shaders/Standard.fx";
+	std::filesystem::path shaderFilePath = L"../../Assets/Shaders/CelShading.fx";
 	mStandardEffect.Initialize(shaderFilePath);
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
