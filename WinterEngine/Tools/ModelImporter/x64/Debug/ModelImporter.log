@@ -1,6 +1,7 @@
 ﻿  main.cpp
-C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\Tools\ModelImporter\main.cpp(51,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  ModelImporter.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\x64\Debug\ModelImporter.exe
-  C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
-  C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
+D:\VGP242\WinterEngine\Tools\ModelImporter\main.cpp(61,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\VGP242\WinterEngine\Tools\ModelImporter\main.cpp(112,4): warning C4018: '<': signed/unsigned mismatch
+  ModelImporter.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\ModelImporter.exe
+  D:\VGP242\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
+  D:\VGP242\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
           2 file(s) copied.

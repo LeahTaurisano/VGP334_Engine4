@@ -13,9 +13,12 @@ public:
 
 protected:
 	WinterEngine::Graphics::Camera mCamera;
+	WinterEngine::Graphics::Camera mRenderTargetCamera;
 	
 	WinterEngine::Graphics::RenderGroup mCharacter;
 
 	WinterEngine::Graphics::StandardEffect mStandardEffect;
+	WinterEngine::Graphics::StandardEffect mRenderTargetStandardEffect;
 	WinterEngine::Graphics::DirectionalLight mDirectionalLight;
+	WinterEngine::Graphics::RenderTarget mRenderTarget;
 };
