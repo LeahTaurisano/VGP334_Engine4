@@ -152,6 +152,7 @@
     <ClInclude Include="Inc\ModelCache.h" />
     <ClInclude Include="Inc\ModelIO.h" />
     <ClInclude Include="Inc\PixelShader.h" />
+    <ClInclude Include="Inc\PostProcessingEffect.h" />
     <ClInclude Include="Inc\RenderObject.h" />
     <ClInclude Include="Inc\RenderTarget.h" />
     <ClInclude Include="Inc\Sampler.h" />
@@ -175,6 +176,7 @@
     <ClCompile Include="Src\ModelCache.cpp" />
     <ClCompile Include="Src\ModelIO.cpp" />
     <ClCompile Include="Src\PixelShader.cpp" />
+    <ClCompile Include="Src\PostProcessingEffect.cpp" />
     <ClCompile Include="Src\Precompile.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precompile.h</PrecompiledHeaderFile>

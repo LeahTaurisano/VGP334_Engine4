@@ -7,6 +7,12 @@
 using namespace WinterEngine;
 using namespace WinterEngine::Graphics;
 
+void WinterEngine::Graphics::Texture::UnbindPS(uint32_t slot)
+{
+	static ID3D11ShaderResourceView* dummy = nullptr;
+	GraphicsSystem::Get()->GetContext()->PSSetShaderResources(slot, 1, &dummy);
+}
+
 Texture::~Texture()
 {
 	ASSERT(mShaderResourceView == nullptr, "Texture: must call terminate");

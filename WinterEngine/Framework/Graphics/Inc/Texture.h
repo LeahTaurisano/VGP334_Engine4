@@ -6,6 +6,8 @@ namespace WinterEngine::Graphics
 	{
 	public:
 
+		static void UnbindPS(uint32_t slot);
+
 		enum class Format
 		{
 			RGBA_U8,
