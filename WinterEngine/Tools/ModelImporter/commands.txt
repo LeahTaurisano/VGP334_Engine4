@@ -1,1 +1,1 @@
--scale 0.01 ../../Assets/Models/Character01/Nightshade_J_Friedrich.fbx ../../Assets/Models/Character01/Nightshade_J_Friedrich.model
+-scale 0.01 ../../Assets/Models/Character02/Arissa.fbx ../../Assets/Models/Character02/Arissa.model

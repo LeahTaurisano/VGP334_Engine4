@@ -25,7 +25,11 @@ void GameState::Initialize()
 	mRenderTargetStandardEffect.SetDirectionalLight(mDirectionalLight);
 
 	mCharacter.Initialize(L"../../Assets/Models/Character01/Nightshade_J_Friedrich.model");
+	mCharacter2.Initialize(L"../../Assets/Models/Character02/Arissa.model");
 
+	toRenderTarget = mCharacter;
+
+	mCharacter2.transform.position = { 2.0f, 0.0f, 0.0f };
 
 	const uint32_t size = 512;
 	mRenderTarget.Initialize(size, size, Texture::Format::RGBA_U8);
@@ -33,6 +37,7 @@ void GameState::Initialize()
 void GameState::Terminate()
 {
 	mRenderTarget.Terminate();
+	mCharacter2.Terminate();
 	mCharacter.Terminate();
 	mRenderTargetStandardEffect.Terminate();
 	mStandardEffect.Terminate();
@@ -79,13 +84,14 @@ void GameState::Render()
 	mCamera.SetAspectRatio(1.0f);
 	mRenderTarget.BeginRender();
 		mRenderTargetStandardEffect.Begin();
-		mRenderTargetStandardEffect.Render(mCharacter);
+		mRenderTargetStandardEffect.Render(toRenderTarget);
 		mRenderTargetStandardEffect.End();
 	mRenderTarget.EndRender();
 
 	mCamera.SetAspectRatio(0.0f);
 	mStandardEffect.Begin();
 		mStandardEffect.Render(mCharacter);
+		mStandardEffect.Render(mCharacter2);
 	mStandardEffect.End();
 
 	SimpleDraw::AddGroundPlane(10.0f, Colors::White);
@@ -115,6 +121,19 @@ void GameState::DebugUI()
 		{ 1, 1 },
 		{ 1, 1, 1, 1 },
 		{ 1, 1, 1, 1 });
+	int value = 0;
+	const char* characters[] = { "Nightshade", "Arissa" };
+	if (ImGui::Combo("ActiveCharacter", &value, characters , 2))
+	{
+		if (value == 0)
+		{
+			toRenderTarget = mCharacter;
+		}
+		else
+		{
+			toRenderTarget = mCharacter2;
+		}
+	}
 	mStandardEffect.DebugUI();
 	ImGui::End();
 }

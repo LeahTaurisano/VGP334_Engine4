@@ -79,7 +79,7 @@ void ExportEmbeddedTexture(const aiTexture* texture, const Arguments& args, cons
 	if (err != 0 || file == nullptr)
 	{
 		printf("Error: failed to open file %s for saving \n", fullFileName.c_str());
-		return;
+		return; 
 	}
 
 	size_t written = fwrite(texture->pcData, 1, texture->mWidth, file);

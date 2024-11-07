@@ -16,6 +16,9 @@ protected:
 	WinterEngine::Graphics::Camera mRenderTargetCamera;
 	
 	WinterEngine::Graphics::RenderGroup mCharacter;
+	WinterEngine::Graphics::RenderGroup mCharacter2;
+
+	WinterEngine::Graphics::RenderGroup toRenderTarget;
 
 	WinterEngine::Graphics::StandardEffect mStandardEffect;
 	WinterEngine::Graphics::StandardEffect mRenderTargetStandardEffect;
