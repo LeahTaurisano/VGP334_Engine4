@@ -44,11 +44,11 @@ void GameState::Initialize()
 void GameState::Terminate()
 {
 	mCombineTexture.Terminate();
-	mPostProcessingEffect.Terminate();
 	mRenderTarget.Terminate();
 	mGround.Terminate();
 	mScreenQuad.Terminate();
 	mCharacter.Terminate();
+	mPostProcessingEffect.Terminate();
 	mStandardEffect.Terminate();
 }
 

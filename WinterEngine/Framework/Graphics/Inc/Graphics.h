@@ -28,3 +28,6 @@
 #include "ModelIO.h"
 #include "ModelCache.h"
 #include "PostProcessingEffect.h"
+#include "GaussianBlurEffect.h"
+#include "Terrain.h"
+#include "TerrainEffect.h"

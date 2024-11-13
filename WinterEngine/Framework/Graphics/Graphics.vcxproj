@@ -142,6 +142,7 @@
     <ClInclude Include="Inc\ConstantBuffer.h" />
     <ClInclude Include="Inc\DebugUI.h" />
     <ClInclude Include="Inc\DirectionalLight.h" />
+    <ClInclude Include="Inc\GaussianBlurEffect.h" />
     <ClInclude Include="Inc\Graphics.h" />
     <ClInclude Include="Inc\GraphicsSystem.h" />
     <ClInclude Include="Inc\Material.h" />
@@ -158,6 +159,8 @@
     <ClInclude Include="Inc\Sampler.h" />
     <ClInclude Include="Inc\SimpleDraw.h" />
     <ClInclude Include="Inc\StandardEffect.h" />
+    <ClInclude Include="Inc\Terrain.h" />
+    <ClInclude Include="Inc\TerrainEffect.h" />
     <ClInclude Include="Inc\Texture.h" />
     <ClInclude Include="Inc\TextureCache.h" />
     <ClInclude Include="Inc\Transform.h" />
@@ -170,6 +173,7 @@
     <ClCompile Include="Src\Camera.cpp" />
     <ClCompile Include="Src\ConstantBuffer.cpp" />
     <ClCompile Include="Src\DebugUI.cpp" />
+    <ClCompile Include="Src\GaussianBlurEffect.cpp" />
     <ClCompile Include="Src\GraphicsSystem.cpp" />
     <ClCompile Include="Src\MeshBuffer.cpp" />
     <ClCompile Include="Src\MeshBuilder.cpp" />
@@ -186,6 +190,8 @@
     <ClCompile Include="Src\Sampler.cpp" />
     <ClCompile Include="Src\SimpleDraw.cpp" />
     <ClCompile Include="Src\StandardEffect.cpp" />
+    <ClCompile Include="Src\Terrain.cpp" />
+    <ClCompile Include="Src\TerrainEffect.cpp" />
     <ClCompile Include="Src\Texture.cpp" />
     <ClCompile Include="Src\TextureCache.cpp" />
     <ClCompile Include="Src\VertexShader.cpp" />
