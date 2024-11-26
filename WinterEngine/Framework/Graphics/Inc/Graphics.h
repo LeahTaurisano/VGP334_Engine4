@@ -31,3 +31,4 @@
 #include "GaussianBlurEffect.h"
 #include "Terrain.h"
 #include "TerrainEffect.h"
+#include "ShadowEffect.h"
