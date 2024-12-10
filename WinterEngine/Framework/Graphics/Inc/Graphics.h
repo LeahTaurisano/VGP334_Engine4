@@ -32,3 +32,4 @@
 #include "Terrain.h"
 #include "TerrainEffect.h"
 #include "ShadowEffect.h"
+#include "PortalEffect.h"
