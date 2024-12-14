@@ -103,28 +103,29 @@ void GameState::Update(float deltaTime)
 	{
 		mCharacter.transform.position.x -= (moveSpeed * deltaTime);
 	}
+	else if (input->IsKeyDown(KeyCode::RIGHT))
+	{
+		mCharacter.transform.position.x += (moveSpeed * deltaTime);
+	}
+	if (input->IsKeyDown(KeyCode::UP))
+	{
+		mCharacter.transform.position.z += (moveSpeed * deltaTime);
+	}
+	else if (input->IsKeyDown(KeyCode::DOWN))
+	{
+		mCharacter.transform.position.z -= (moveSpeed * deltaTime);
+	}
+	if (input->IsKeyDown(KeyCode::RBRACKET))
+	{
+		mCharacter.transform.position.y += (moveSpeed * deltaTime);
+	}
+	else if (input->IsKeyDown(KeyCode::LBRACKET))
+	{
+		mCharacter.transform.position.y -= (moveSpeed * deltaTime);
+	}
 }
 void GameState::Render()
 {
-	// portal 1
-	// set standard effect camera to linked camera
-	// render
-	//======================================
-	// repeat for portal 2
-	// set standard effect camera to linked camera
-	//// render
-	//mPortal1Effect.BeginPortalImageRender(); // getting the image
-	//	//		mRendertarget.BeginRender()
-	//	//		mStandardEffect->SetCamera(mLinkedCamera)
-	//	//		mStandardEffect->Begin()
-	//	///mStandardEffect.Begin();
-	//	mPortal1Effect.Render(mCharacter);
-	//	mPortal1Effect.Render(mGround);
-	//	//mStandardEffect.End();
-	//mPortal1Effect.EndPortalImageRender();
-	//	// mStandardEffect->End()
-	//	//	mRenderTarget.EndRender()
-
 	mPortalEffectOne.BeginPortalImageRender();
 		mPortalEffectOne.PortalImageRender(mCharacter);
 		mPortalEffectOne.PortalImageRender(mGround);
@@ -136,53 +137,17 @@ void GameState::Render()
 	mPortalEffectTwo.EndPortalImageRender();
 
 	mPortalEffectOne.Begin();
-	mPortalEffectOne.Render(mPortalOne);
+		mPortalEffectOne.Render(mPortalOne);
 	mPortalEffectOne.End();
 
 	mPortalEffectTwo.Begin();
-	mPortalEffectTwo.Render(mPortalTwo);
+		mPortalEffectTwo.Render(mPortalTwo);
 	mPortalEffectTwo.End();
 
 	mStandardEffect.Begin();
 		mStandardEffect.Render(mCharacter);
 		mStandardEffect.Render(mGround);
 	mStandardEffect.End();
-
-	//mPortal2Effect.BeginPortalImageRender(); // getting the image
-	////		mRendertarget.BeginRender()
-	////		mStandardEffect->SetCamera(mLinkedCamera)
-	////		mStandardEffect->Begin()
-	/////mStandardEffect.Begin();
-	//mPortal2Effect.Render(mCharacter);
-	//mPortal2Effect.Render(mGround);
-	////mStandardEffect.End();
-	//mPortal2Effect.EndPortalImageRender();
-	//// mStandardEffect->End()
-	////	mRenderTarget.EndRender()
-
-	//mPortal1Effect.Begin();
-	//	// in the render
-	//	//	mRenderTarget.BindPS(0)
-	//	mPortal1Effect.Render(mPortal1Object);
-	//mPortal1Effect.End();
-
-	//mPortal2Effect.Begin();
-	//	mPortal2Effect.Render(mPortal2Object);
-	//mPortal2Effect.End();
-
-	//mStandardEffect.SetCamera(mPortal1Effect.GetLinkedCamera());
-	//mPortal1Effect.BeginPortalRender(); // getting the image
-	//	mStandardEffect.Begin();
-	//	mStandardEffect.Render(mCharacter);
-	//	mStandardEffect.Render(mGround);
-	//	mStandardEffect.End();
-	//mPortal1Effect.EndPortalRender();
-
-	// render portal 1 with the portal object
-	// render portal 2 with the other portal object
-	//mPostProcessingEffect.Begin();
-	//mPostProcessingEffect.Render(mScreenQuad);
-	//mPostProcessingEffect.End();
 }
 
 void GameState::DebugUI()

@@ -125,7 +125,7 @@ void PortalEffect::UpdatePortalCamera()
 	Math::Vector3 direction = { -portalMat._31, -portalMat._32, -portalMat._33 };
 	Math::Vector3 position = Math::Vector3(portalMat._41, portalMat._42, portalMat._43) - direction * 0.5f;
 	mPortalCamera.SetPosition(position);
-	mPortalCamera.SetDirection(direction);
+	mPortalCamera.SetDirection(direction); //update to be opposite of the main camera's direction to the linked portal
 	//.SetPosition(mFocusPoint - (direction * 100.0f));
 	mPortalCamera.SetSize(mSize, mSize);
 }
