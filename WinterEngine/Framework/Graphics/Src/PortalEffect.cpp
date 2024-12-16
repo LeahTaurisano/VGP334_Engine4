@@ -43,12 +43,15 @@ void PortalEffect::Begin()
 
 void PortalEffect::Render(const RenderObject& renderObject)
 {
+	//Screen space vs world space
+
 	const Math::Matrix4 matWorld = renderObject.transform.GetMatrix4();
 	const Math::Matrix4 matView = mGameCamera->GetViewMatrix();
 	const Math::Matrix4 matProj = mGameCamera->GetProjectionMatrix();
 
 	TransformData data;
 	data.wvp = Math::Transpose(matWorld * matView * matProj);
+	data.portalPos = mPortalObject->transform.position;
 	mTransformBuffer.Update(data);
 	renderObject.meshBuffer.Render();
 }
@@ -62,7 +65,8 @@ void PortalEffect::BeginPortalImageRender()
 	UpdatePortalCamera();
 
 	mPortalRenderTarget.BeginRender();
-	mStandardEffect->SetCamera(*mLinkedPortalCamera);
+	//mStandardEffect->SetCamera(*mLinkedPortalCamera);
+	mStandardEffect->SetCamera(mPortalCamera);
 	mStandardEffect->Begin();
 }
 
@@ -94,7 +98,7 @@ void PortalEffect::DebugUI()
 			{ 1, 1 },
 			{ 1, 1, 1, 1 },
 			{ 1, 1, 1, 1 });
-		ImGui::DragFloat("Size##Portal", &mSize, 1.0f, 1.0f, 1000.0f);
+		//ImGui::DragFloat("Size##Portal", &mSize, 1.0f, 1.0f, 1000.0f);
 	}
 }
 
@@ -106,6 +110,7 @@ void PortalEffect::SetStandardEffect(StandardEffect& standardEffect)
 void PortalEffect::LinkPortal(const PortalEffect& linkPortal)
 {
 	mLinkedPortalCamera = &linkPortal.GetPortalCamera();
+	mLinkedPortalObject = &linkPortal.GetPortalObject();
 }
 
 void PortalEffect::SetGameCamera(const Camera& gameCamera)
@@ -121,11 +126,21 @@ void PortalEffect::SetPortalObject(RenderObject& renderObject)
 void PortalEffect::UpdatePortalCamera()
 {
 	//ASSERT(mDirectionalLight != nullptr, "ShadowEffect: no light set");
-	Math::Matrix4 portalMat = mPortalObject->transform.GetMatrix4();
+	Math::Matrix4 portalMat = mLinkedPortalObject->transform.GetMatrix4();
 	Math::Vector3 direction = { -portalMat._31, -portalMat._32, -portalMat._33 };
-	Math::Vector3 position = Math::Vector3(portalMat._41, portalMat._42, portalMat._43) - direction * 0.5f;
+	//Math::Vector3 direction = (mGameCamera->GetPosition() - mLinkedPortalCamera->GetPosition());
+	//Math::Vector3 dirToPortal = mGameCamera->GetDirection();
+	//dirToPortal.x *= -1;
+	//dirToPortal.z *= -1;
+	//Math::Vector3 direction = dirToPortal;
+	Math::Vector3 position = Math::Vector3(portalMat._41, portalMat._42, portalMat._43) - direction;
+	//Math::Vector3 position = mPortalObject->transform.position - direction * 0.3;
+	//Math::Vector3 distToPortal = mGameCamera->GetPosition() - mPortalObject->transform.position;
+	//distToPortal.x *= -1;
+	//distToPortal.z *= -1;
+	//Math::Vector3 position = mLinkedPortalObject->transform.position + distToPortal;
 	mPortalCamera.SetPosition(position);
-	mPortalCamera.SetDirection(direction); //update to be opposite of the main camera's direction to the linked portal
+	mPortalCamera.SetDirection(direction);
 	//.SetPosition(mFocusPoint - (direction * 100.0f));
 	mPortalCamera.SetSize(mSize, mSize);
 }
@@ -133,4 +148,9 @@ void PortalEffect::UpdatePortalCamera()
 const Camera& PortalEffect::GetPortalCamera() const
 {
 	return mPortalCamera;
+}
+
+const RenderObject& PortalEffect::GetPortalObject() const
+{
+	return *mPortalObject;
 }

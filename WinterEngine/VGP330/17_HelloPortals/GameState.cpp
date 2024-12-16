@@ -26,18 +26,24 @@ void GameState::Initialize()
 	mPortalEffectTwo.SetStandardEffect(mStandardEffect);
 	mPortalEffectTwo.SetGameCamera(mCamera);
 
-	mPortalEffectOne.LinkPortal(mPortalEffectTwo);
-	mPortalEffectTwo.LinkPortal(mPortalEffectOne);
-
-	MeshPX portalOneMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 2.0f);
+	MeshPX portalOneMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 3.0f);
 	mPortalOne.meshBuffer.Initialize(portalOneMesh);
 	mPortalOne.transform.position = { 2.0f, 1.5f, 1.0f };
 	mPortalEffectOne.SetPortalObject(mPortalOne);
 
-	MeshPX portalTwoMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 2.0f);
+	MeshPX portalTwoMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 3.0f);
 	mPortalTwo.meshBuffer.Initialize(portalTwoMesh);
 	mPortalTwo.transform.position = { -2.0f, 1.5f, 1.0f };
 	mPortalEffectTwo.SetPortalObject(mPortalTwo);
+
+	mPortalEffectOne.LinkPortal(mPortalEffectTwo);
+	mPortalEffectTwo.LinkPortal(mPortalEffectOne);
+
+	MeshPC sphere = MeshBuilder::CreateSpherePC(6, 6, .5);
+	sphereObject.meshBuffer.Initialize(sphere);
+
+	MeshPC sphere2 = MeshBuilder::CreateSpherePC(6, 6, .5);
+	sphereObject2.meshBuffer.Initialize(sphere2);
 	
 	mCharacter.Initialize(L"../../Assets/Models/Character01/Nightshade_J_Friedrich.model");
 	mCharacter.transform.position = { 2.0f, 0.0f, -2.0f };
@@ -123,6 +129,9 @@ void GameState::Update(float deltaTime)
 	{
 		mCharacter.transform.position.y -= (moveSpeed * deltaTime);
 	}
+
+	sphereObject.transform.position = mPortalEffectOne.GetPortalCamera().GetPosition();
+	sphereObject2.transform.position = mPortalEffectTwo.GetPortalCamera().GetPosition();
 }
 void GameState::Render()
 {
@@ -147,6 +156,8 @@ void GameState::Render()
 	mStandardEffect.Begin();
 		mStandardEffect.Render(mCharacter);
 		mStandardEffect.Render(mGround);
+		mStandardEffect.Render(sphereObject);
+		mStandardEffect.Render(sphereObject2);
 	mStandardEffect.End();
 }
 

@@ -35,6 +35,8 @@ namespace WinterEngine::Graphics
 
 		const Camera& GetPortalCamera() const;
 
+		const RenderObject& GetPortalObject() const;
+
 		void LinkPortal(const PortalEffect& linkPortal);
 
 		void SetGameCamera(const Camera& gameCamera);
@@ -47,6 +49,8 @@ namespace WinterEngine::Graphics
 		struct TransformData
 		{
 			Math::Matrix4 wvp;
+			Math::Vector3 portalPos;
+			float padding = 0.0f;
 		};
 
 		using TransformBuffer = TypedConstantBuffer<TransformData>;
@@ -65,6 +69,7 @@ namespace WinterEngine::Graphics
 		StandardEffect* mStandardEffect;
 
 		RenderObject* mPortalObject;
+		const RenderObject* mLinkedPortalObject;
 		float mSize = 100.0f;
 	};
 }

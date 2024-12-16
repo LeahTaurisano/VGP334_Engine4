@@ -26,4 +26,7 @@ protected:
 
 	WinterEngine::Graphics::RenderObject mPortalOne;
 	WinterEngine::Graphics::RenderObject mPortalTwo;
+
+	WinterEngine::Graphics::RenderObject sphereObject;
+	WinterEngine::Graphics::RenderObject sphereObject2;
 };

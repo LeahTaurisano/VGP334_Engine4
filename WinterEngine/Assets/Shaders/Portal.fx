@@ -3,6 +3,7 @@
 cbuffer TransformBuffer : register(b0)
 {
     matrix wvp;
+    float3 portalPos;
 }
 
 Texture2D diffuseMap : register(t0);
