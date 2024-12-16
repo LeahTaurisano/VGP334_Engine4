@@ -127,15 +127,15 @@ void PortalEffect::UpdatePortalCamera()
 {
 	//ASSERT(mDirectionalLight != nullptr, "ShadowEffect: no light set");
 	Math::Matrix4 portalMat = mLinkedPortalObject->transform.GetMatrix4();
-	Math::Vector3 direction = { -portalMat._31, -portalMat._32, -portalMat._33 };
-	//Math::Vector3 direction = (mGameCamera->GetPosition() - mLinkedPortalCamera->GetPosition());
-	//Math::Vector3 dirToPortal = mGameCamera->GetDirection();
+	Math::Vector3 direction = { -portalMat._31, -portalMat._32, -portalMat._33 }; //static portal image
+	//Math::Vector3 direction = (mGameCamera->GetPosition() - mLinkedPortalCamera->GetPosition()); //Adjusts based on position, needs improving
+	//Math::Vector3 dirToPortal = mGameCamera->GetDirection(); //testing based on the portal object, puts both cameras in the same position
 	//dirToPortal.x *= -1;
 	//dirToPortal.z *= -1;
 	//Math::Vector3 direction = dirToPortal;
-	Math::Vector3 position = Math::Vector3(portalMat._41, portalMat._42, portalMat._43) - direction;
-	//Math::Vector3 position = mPortalObject->transform.position - direction * 0.3;
-	//Math::Vector3 distToPortal = mGameCamera->GetPosition() - mPortalObject->transform.position;
+	Math::Vector3 position = Math::Vector3(portalMat._41, portalMat._42, portalMat._43) - direction; //static portal image
+	//Math::Vector3 position = mPortalObject->transform.position - direction * 0.3; //adjust based on position, needs improving
+	//Math::Vector3 distToPortal = mGameCamera->GetPosition() - mPortalObject->transform.position; //testing based on the portal object, puts both cameras in the same position
 	//distToPortal.x *= -1;
 	//distToPortal.z *= -1;
 	//Math::Vector3 position = mLinkedPortalObject->transform.position + distToPortal;
