@@ -6,6 +6,7 @@
 #include "VertexShader.h"
 #include "RenderTarget.h"
 #include "Sampler.h"
+#include "MeshTypes.h"
 
 namespace WinterEngine::Graphics
 {
@@ -17,7 +18,7 @@ namespace WinterEngine::Graphics
 	class PortalEffect
 	{
 	public:
-		void Initialize();
+		void Initialize(const MeshPX& portalMesh);
 		void Terminate();
 
 		void Begin();
@@ -38,13 +39,17 @@ namespace WinterEngine::Graphics
 		const RenderObject& GetPortalObject() const;
 
 		void LinkPortal(const PortalEffect& linkPortal);
+		void LinkPortalMesh(const MeshPX& meshPX);
 
 		void SetGameCamera(const Camera& gameCamera);
 
 		void SetPortalObject(RenderObject& renderObject);
 
+		const MeshPX& GetPortalMesh() const { return mPortalMesh; }
+
 	private:
 		void UpdatePortalCamera();
+		void UpdatePortalUV();
 
 		struct TransformData
 		{
@@ -68,6 +73,8 @@ namespace WinterEngine::Graphics
 		const Camera* mGameCamera;
 		StandardEffect* mStandardEffect;
 
+		MeshPX mPortalMesh;
+		const MeshPX* mLinkedPortalMesh;
 		RenderObject* mPortalObject;
 		const RenderObject* mLinkedPortalObject;
 		float mSize = 100.0f;

@@ -19,25 +19,31 @@ void GameState::Initialize()
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
 
-	mPortalEffectOne.Initialize();
+	MeshPX portalOneMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 2.0f);
+	mPortalEffectOne.Initialize(portalOneMesh);
 	mPortalEffectOne.SetStandardEffect(mStandardEffect);
 	mPortalEffectOne.SetGameCamera(mCamera);
-	mPortalEffectTwo.Initialize();
-	mPortalEffectTwo.SetStandardEffect(mStandardEffect);
-	mPortalEffectTwo.SetGameCamera(mCamera);
 
-	MeshPX portalOneMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 3.0f);
-	mPortalOne.meshBuffer.Initialize(portalOneMesh);
+	mPortalOne.meshBuffer.Initialize(nullptr, sizeof(VertexPX), portalOneMesh.vertices.size(), portalOneMesh.indices.data(), portalOneMesh.indices.size());
+	mPortalOne.meshBuffer.Update(portalOneMesh.vertices.data(), portalOneMesh.vertices.size());
 	mPortalOne.transform.position = { 2.0f, 1.5f, 1.0f };
 	mPortalEffectOne.SetPortalObject(mPortalOne);
 
-	MeshPX portalTwoMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 3.0f);
-	mPortalTwo.meshBuffer.Initialize(portalTwoMesh);
+	MeshPX portalTwoMesh = MeshBuilder::CreateVerticalPlanePX(1, 1, 2.0f);
+	mPortalEffectTwo.Initialize(portalTwoMesh);
+	mPortalEffectTwo.SetStandardEffect(mStandardEffect);
+	mPortalEffectTwo.SetGameCamera(mCamera);
+
+	mPortalTwo.meshBuffer.Initialize(nullptr, sizeof(VertexPX), portalTwoMesh.vertices.size(), portalTwoMesh.indices.data(), portalTwoMesh.indices.size());
+	mPortalTwo.meshBuffer.Update(portalTwoMesh.vertices.data(), portalTwoMesh.vertices.size());
 	mPortalTwo.transform.position = { -2.0f, 1.5f, 1.0f };
 	mPortalEffectTwo.SetPortalObject(mPortalTwo);
 
 	mPortalEffectOne.LinkPortal(mPortalEffectTwo);
 	mPortalEffectTwo.LinkPortal(mPortalEffectOne);
+
+	mPortalEffectOne.LinkPortalMesh(mPortalEffectTwo.GetPortalMesh());
+	mPortalEffectTwo.LinkPortalMesh(mPortalEffectOne.GetPortalMesh());
 
 	MeshPC sphere = MeshBuilder::CreateSpherePC(6, 6, .5);
 	sphereObject.meshBuffer.Initialize(sphere);
