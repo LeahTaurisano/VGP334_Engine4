@@ -33,3 +33,6 @@
 #include "TerrainEffect.h"
 #include "ShadowEffect.h"
 #include "PortalEffect.h"
+#include "Keyframe.h"
+#include "Animation.h"
+#include "AnimationBuilder.h"
