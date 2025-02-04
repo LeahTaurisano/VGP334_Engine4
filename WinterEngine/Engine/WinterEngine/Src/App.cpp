@@ -6,6 +6,7 @@ using namespace WinterEngine;
 using namespace WinterEngine::Core;
 using namespace WinterEngine::Graphics;
 using namespace WinterEngine::Input;
+using namespace WinterEngine::Physics;
 
 void App::ChangeState(const std::string& stateName)
 {
@@ -36,6 +37,8 @@ void App::Run(const AppConfig& config)
 	TextureCache::StaticInitialize("../../Assets/Images/");
 	ModelCache::StaticInitialize();
 	
+	PhysicsWorld::Settings settings;
+	PhysicsWorld::StaticInitialize(settings);
 
 	ASSERT(mCurrentState != nullptr, "App: need an app state");
 	mCurrentState->Initialize();
@@ -61,6 +64,8 @@ void App::Run(const AppConfig& config)
 		}
 		float deltaTime = TimeUtil::GetDeltaTime();
 		mCurrentState->Update(deltaTime);
+		PhysicsWorld::Get()->Update(deltaTime);
+		
 		GraphicsSystem* gs = GraphicsSystem::Get();
 		gs->BeginRender();
 			mCurrentState->Render();
@@ -72,6 +77,7 @@ void App::Run(const AppConfig& config)
 
 	mCurrentState->Terminate();
 
+	PhysicsWorld::StaticTerminate();
 	ModelCache::StaticTerminate();
 	TextureCache::StaticTerminate();
 	SimpleDraw::StaticTerminate();

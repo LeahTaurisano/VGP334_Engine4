@@ -477,7 +477,7 @@ int main(int argc, char* argv[])
 	}
 
 	printf("Saving Animations...\n");
-	ModelIO::SaveAnimation(args.outputFileName, model);
+	ModelIO::SaveAnimations(args.outputFileName, model);
 
 	return 0;
 }

@@ -1,2 +1,5 @@
 -scale 0.01 ../../Assets/Models/Character01/Nightshade_J_Friedrich.fbx ../../Assets/Models/Character01/Nightshade_J_Friedrich.model
 -scale 0.01 -animOnly 1 ../../Assets/Models/Character01/RumbaDancing.fbx ../../Assets/Models/Character01/RumbaDancing.model
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character01/Capoeira.fbx ../../Assets/Models/Character01/Capoeira.model
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character01/HipHopDancing.fbx ../../Assets/Models/Character01/HipHopDancing.model
+-scale 0.01 -animOnly 1 ../../Assets/Models/Character01/Reaction.fbx ../../Assets/Models/Character01/Reaction.model

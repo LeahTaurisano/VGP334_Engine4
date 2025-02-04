@@ -1,0 +1,3 @@
+﻿  PhysicsWorld.cpp
+D:\VGP242\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(12,51): warning C4305: 'argument': truncation from 'double' to 'float'
+  Physics.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\Physics.lib

@@ -21,6 +21,9 @@ void GameState::Initialize()
 
 	mCharacter.Initialize(L"../../Assets/Models/Character01/Nightshade_J_Friedrich.model", &mCharacterAnimator);
 	ModelCache::Get()->AddAnimation(mCharacter.modelId, L"../../Assets/Models/Character01/RumbaDancing.model");
+	ModelCache::Get()->AddAnimation(mCharacter.modelId, L"../../Assets/Models/Character01/Capoeira.model");
+	ModelCache::Get()->AddAnimation(mCharacter.modelId, L"../../Assets/Models/Character01/HipHopDancing.model");
+	ModelCache::Get()->AddAnimation(mCharacter.modelId, L"../../Assets/Models/Character01/Reaction.model");
 	mCharacterAnimator.Initialize(mCharacter.modelId);
 
 	Mesh groundMesh = MeshBuilder::CreateGroundPlane(10, 10, 1.0f);
