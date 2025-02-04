@@ -1,5 +1,7 @@
 D:\VGP242\WinterEngine\Framework\Graphics\Src\Animation.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\Animation.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\AnimationBuilder.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\AnimationBuilder.obj
+D:\VGP242\WinterEngine\Framework\Graphics\Src\AnimationUtil.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\AnimationUtil.obj
+D:\VGP242\WinterEngine\Framework\Graphics\Src\Animator.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\Animator.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\BlendState.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\BlendState.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\Camera.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\Camera.obj
 D:\VGP242\WinterEngine\Framework\Graphics\Src\ConstantBuffer.cpp;D:\VGP242\WinterEngine\Framework\Graphics\x64\Debug\ConstantBuffer.obj
