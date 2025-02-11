@@ -48,7 +48,7 @@
     dcl_texcoord2 v2  // vin<7,8>
     dcl_texcoord3 v3  // vin<9,10,11,12>
 
-#line 54 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 54 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     dp4 r0.x, v0, c15  // ::pos_ws<0>
     dp4 r0.y, v0, c16  // ::pos_ws<1>
     dp4 r0.z, v0, c17  // ::pos_ws<2>
@@ -59,10 +59,10 @@
     add r0.xyz, r1, -c4
     nrm r2.xyz, r0  // ::halfVectors<0,1,2>
 
-#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Utilities.fxh"
+#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Utilities.fxh"
     mad r0.xyz, v1, c25.x, c25.y  // ::BiasX2<0,1,2>
 
-#line 56 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 56 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     dp3 r3.x, r0, c18
     dp3 r3.y, r0, c19
     dp3 r3.z, r0, c20
@@ -117,28 +117,28 @@
 #line 60
     dp4 oPos.z, v0, c23  // ::VSBasicVertexLightingTxVcBn<12>
 
-#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     dp4 r0.w, v0, c14
     max r0.w, r0.w, c25.z
     min oT1.w, r0.w, c25.w  // ::VSBasicVertexLightingTxVcBn<7>
 
-#line 43 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 43 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     mul r1.xyz, r0.y, c8
     mad r0.xyw, r0.x, c7.xyzz, r1.xyzz
     mad r0.xyz, r0.z, c9, r0.xyww
     mov r1.xyz, c1  // Parameters::DiffuseColor<0,1,2>
     mad r0.xyz, r0, r1, c2  // ::result<0,1,2>
 
-#line 253 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\BasicEffect.fx"
+#line 253 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\BasicEffect.fx"
     mul oT0.xyz, r0, v3  // ::VSBasicVertexLightingTxVcBn<0,1,2>
     mul oT0.w, v3.w, c1.w  // ::VSBasicVertexLightingTxVcBn<3>
 
-#line 60 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 60 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     dp4 r0.x, v0, c21  // ::vout<0>
     dp4 r0.y, v0, c22  // ::vout<1>
     dp4 r0.z, v0, c24  // ::vout<3>
 
-#line 243 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\BasicEffect.fx"
+#line 243 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\BasicEffect.fx"
     mad oPos.xy, r0.z, c0, r0  // ::VSBasicVertexLightingTxVcBn<10,11>
     mov oPos.w, r0.z  // ::VSBasicVertexLightingTxVcBn<13>
 
@@ -219,10 +219,10 @@ ret
 
 const BYTE BasicEffect_VSBasicVertexLightingTxVcBn[] =
 {
-     68,  88,  66,  67, 129,  13, 
-    207, 166,  80, 130, 221, 170, 
-    109, 242,  34,   9, 191, 128, 
-      6, 233,   1,   0,   0,   0, 
+     68,  88,  66,  67, 159, 120, 
+     52,   1, 190, 175, 193, 235, 
+     88, 120,  41, 129, 217, 202, 
+    201, 169,   1,   0,   0,   0, 
     180,  21,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
      16,  13,   0,   0, 148,  20, 
@@ -256,9 +256,9 @@ const BYTE BasicEffect_VSBasicVertexLightingTxVcBn[] =
      68, 111,  99, 117, 109, 101, 
     110, 116, 115,  92,  71, 105, 
     116,  72, 117,  98,  92,  86, 
-     71,  80,  51,  51,  48,  95, 
+     71,  80,  51,  51,  52,  95, 
      69, 110, 103, 105, 110, 101, 
-     51,  92,  87, 105, 110, 116, 
+     52,  92,  87, 105, 110, 116, 
     101, 114,  69, 110, 103, 105, 
     110, 101,  92,  69, 120, 116, 
     101, 114, 110,  97, 108,  92, 
@@ -274,9 +274,9 @@ const BYTE BasicEffect_VSBasicVertexLightingTxVcBn[] =
      92,  68, 111,  99, 117, 109, 
     101, 110, 116, 115,  92,  71, 
     105, 116,  72, 117,  98,  92, 
-     86,  71,  80,  51,  51,  48, 
+     86,  71,  80,  51,  51,  52, 
      95,  69, 110, 103, 105, 110, 
-    101,  51,  92,  87, 105, 110, 
+    101,  52,  92,  87, 105, 110, 
     116, 101, 114,  69, 110, 103, 
     105, 110, 101,  92,  69, 120, 
     116, 101, 114, 110,  97, 108, 
@@ -293,8 +293,8 @@ const BYTE BasicEffect_VSBasicVertexLightingTxVcBn[] =
     117, 109, 101, 110, 116, 115, 
      92,  71, 105, 116,  72, 117, 
      98,  92,  86,  71,  80,  51, 
-     51,  48,  95,  69, 110, 103, 
-    105, 110, 101,  51,  92,  87, 
+     51,  52,  95,  69, 110, 103, 
+    105, 110, 101,  52,  92,  87, 
     105, 110, 116, 101, 114,  69, 
     110, 103, 105, 110, 101,  92, 
      69, 120, 116, 101, 114, 110, 
@@ -311,8 +311,8 @@ const BYTE BasicEffect_VSBasicVertexLightingTxVcBn[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 

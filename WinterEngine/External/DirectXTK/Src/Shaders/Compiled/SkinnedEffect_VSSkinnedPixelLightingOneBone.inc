@@ -49,7 +49,7 @@
     dcl_texcoord3 v3  // vin<9,10,11,12>
     dcl_texcoord4 v4  // vin<13,14,15,16>
 
-#line 15 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Skinning.fxh"
+#line 15 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Skinning.fxh"
     mul r0.x, v3.x, c243.x
     mova a0.x, r0.x
     mul r0, v4.x, c26[a0.x]  // ::skinning<0,3,6,9>
@@ -68,7 +68,7 @@
     dp4 r1.z, v0, r3  // Skin::vin<2>
     dp3 r0.z, v1, r3  // ::Skin<2>
 
-#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     mov r1.w, v0.w
     dp4 oPos.z, r1, c24  // ::VSSkinnedPixelLightingOneBone<15>
     dp4 oT1.x, r1, c15  // ::VSSkinnedPixelLightingOneBone<2>
@@ -81,17 +81,17 @@
     rsq r0.x, r0.x
     mul oT2.xyz, r0.x, r2  // ::VSSkinnedPixelLightingOneBone<6,7,8>
 
-#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     dp4 r0.x, r1, c14
     max r0.x, r0.x, c243.y
     min oT1.w, r0.x, c243.z  // ::VSSkinnedPixelLightingOneBone<5>
 
-#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     dp4 r0.x, r1, c22  // ::vout<0>
     dp4 r0.y, r1, c23  // ::vout<1>
     dp4 r0.z, r1, c25  // ::vout<3>
 
-#line 234 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
+#line 234 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
     mad oPos.xy, r0.z, c242, r0  // ::VSSkinnedPixelLightingOneBone<13,14>
     mov oPos.w, r0.z  // ::VSSkinnedPixelLightingOneBone<16>
 
@@ -150,10 +150,10 @@ ret
 
 const BYTE SkinnedEffect_VSSkinnedPixelLightingOneBone[] =
 {
-     68,  88,  66,  67,  71,   6, 
-    188, 204, 108, 233, 118, 202, 
-     30, 206, 172, 160,  94, 120, 
-    143, 158,   1,   0,   0,   0, 
+     68,  88,  66,  67,  82,  62, 
+     40, 242, 165,   8, 159,  63, 
+     99,   4,  85, 113, 235, 232, 
+     15, 115,   1,   0,   0,   0, 
       4,  15,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     172,   9,   0,   0, 160,  13, 
@@ -183,9 +183,9 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingOneBone[] =
      68, 111,  99, 117, 109, 101, 
     110, 116, 115,  92,  71, 105, 
     116,  72, 117,  98,  92,  86, 
-     71,  80,  51,  51,  48,  95, 
+     71,  80,  51,  51,  52,  95, 
      69, 110, 103, 105, 110, 101, 
-     51,  92,  87, 105, 110, 116, 
+     52,  92,  87, 105, 110, 116, 
     101, 114,  69, 110, 103, 105, 
     110, 101,  92,  69, 120, 116, 
     101, 114, 110,  97, 108,  92, 
@@ -201,9 +201,9 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingOneBone[] =
      92,  68, 111,  99, 117, 109, 
     101, 110, 116, 115,  92,  71, 
     105, 116,  72, 117,  98,  92, 
-     86,  71,  80,  51,  51,  48, 
+     86,  71,  80,  51,  51,  52, 
      95,  69, 110, 103, 105, 110, 
-    101,  51,  92,  87, 105, 110, 
+    101,  52,  92,  87, 105, 110, 
     116, 101, 114,  69, 110, 103, 
     105, 110, 101,  92,  69, 120, 
     116, 101, 114, 110,  97, 108, 
@@ -220,8 +220,8 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingOneBone[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 
@@ -237,9 +237,9 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingOneBone[] =
      92,  68, 111,  99, 117, 109, 
     101, 110, 116, 115,  92,  71, 
     105, 116,  72, 117,  98,  92, 
-     86,  71,  80,  51,  51,  48, 
+     86,  71,  80,  51,  51,  52, 
      95,  69, 110, 103, 105, 110, 
-    101,  51,  92,  87, 105, 110, 
+    101,  52,  92,  87, 105, 110, 
     116, 101, 114,  69, 110, 103, 
     105, 110, 101,  92,  69, 120, 
     116, 101, 114, 110,  97, 108, 

@@ -47,16 +47,16 @@
     dcl_texcoord1 v1  // vin<4,5,6>
     dcl_texcoord2 v2  // vin<7,8>
 
-#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Utilities.fxh"
+#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Utilities.fxh"
     mad r0.xyz, v1, c22.x, c22.y  // ::BiasX2<0,1,2>
 
-#line 65 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
+#line 65 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
     dp3 r1.x, r0, c15
     dp3 r1.y, r0, c16
     dp3 r1.z, r0, c17
     nrm r0.xyz, r1  // ::worldNormal<0,1,2>
 
-#line 33 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 33 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     dp3 r1.x, -c4, r0  // ::dotL<0>
     dp3 r1.y, -c5, r0  // ::dotL<1>
     dp3 r1.z, -c6, r0  // ::dotL<2>
@@ -72,15 +72,15 @@
     mov r2.xyz, c2  // Parameters::DiffuseColor<0,1,2>
     mad oT0.xyz, r1, r2, c3  // ::VSEnvMapBn<0,1,2>
 
-#line 69 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
+#line 69 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
     dp4 oPos.z, v0, c20  // ::VSEnvMapBn<15>
 
-#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     dp4 r0.w, v0, c11
     max r0.w, r0.w, c22.z
     min oT1.w, r0.w, c22.w  // ::VSEnvMapBn<7>
 
-#line 63 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
+#line 63 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
     dp4 r1.x, v0, c12  // ::pos_ws<0>
     dp4 r1.y, v0, c13  // ::pos_ws<1>
     dp4 r1.z, v0, c14  // ::pos_ws<2>
@@ -101,10 +101,10 @@
     mad oPos.xy, r0.z, c0, r0  // ::VSEnvMapBn<13,14>
     mov oPos.w, r0.z  // ::VSEnvMapBn<16>
 
-#line 43 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 43 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     mov oT0.w, c2.w  // ::VSEnvMapBn<3>
 
-#line 75 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
+#line 75 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
     mov oT1.xyz, c1.x  // ::VSEnvMapBn<4,5,6>
 
 #line 189
@@ -163,10 +163,10 @@ ret
 
 const BYTE EnvironmentMapEffect_VSEnvMapBn[] =
 {
-     68,  88,  66,  67, 138, 148, 
-    199,  76, 176,  47, 250, 206, 
-    100,  26, 223, 142,  71, 242, 
-     75,  93,   1,   0,   0,   0, 
+     68,  88,  66,  67, 105, 150, 
+    192, 129, 182, 161, 149,  36, 
+    154,  88,  67,  35, 196,  30, 
+    150, 244,   1,   0,   0,   0, 
       8,  16,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     232,   9,   0,   0, 240,  14, 
@@ -200,9 +200,9 @@ const BYTE EnvironmentMapEffect_VSEnvMapBn[] =
      68, 111,  99, 117, 109, 101, 
     110, 116, 115,  92,  71, 105, 
     116,  72, 117,  98,  92,  86, 
-     71,  80,  51,  51,  48,  95, 
+     71,  80,  51,  51,  52,  95, 
      69, 110, 103, 105, 110, 101, 
-     51,  92,  87, 105, 110, 116, 
+     52,  92,  87, 105, 110, 116, 
     101, 114,  69, 110, 103, 105, 
     110, 101,  92,  69, 120, 116, 
     101, 114, 110,  97, 108,  92, 
@@ -219,8 +219,8 @@ const BYTE EnvironmentMapEffect_VSEnvMapBn[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 
@@ -239,8 +239,8 @@ const BYTE EnvironmentMapEffect_VSEnvMapBn[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 
@@ -257,8 +257,8 @@ const BYTE EnvironmentMapEffect_VSEnvMapBn[] =
     117, 109, 101, 110, 116, 115, 
      92,  71, 105, 116,  72, 117, 
      98,  92,  86,  71,  80,  51, 
-     51,  48,  95,  69, 110, 103, 
-    105, 110, 101,  51,  92,  87, 
+     51,  52,  95,  69, 110, 103, 
+    105, 110, 101,  52,  92,  87, 
     105, 110, 116, 101, 114,  69, 
     110, 103, 105, 110, 101,  92, 
      69, 120, 116, 101, 114, 110, 

@@ -38,7 +38,7 @@
     dcl_2d s0
     dcl_cube s1
 
-#line 293 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
+#line 293 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\EnvironmentMapEffect.fx"
     texld r0, t3, s1
     texld r1, t2, s0
     mul r1, r1, t0  // ::color<0,1,2,3>
@@ -72,10 +72,10 @@ ret
 
 const BYTE EnvironmentMapEffect_PSEnvMapNoFog[] =
 {
-     68,  88,  66,  67, 131, 207, 
-    118,  77, 114,  18,   1,  10, 
-    190, 252, 176,   0, 162,  93, 
-    195, 115,   1,   0,   0,   0, 
+     68,  88,  66,  67, 126, 103, 
+     77,  98, 137,   3, 162, 153, 
+    171,  19, 199, 149, 116,  73, 
+    196,  22,   1,   0,   0,   0, 
     152,   5,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     144,   3,   0,   0, 228,   4, 
@@ -104,8 +104,8 @@ const BYTE EnvironmentMapEffect_PSEnvMapNoFog[] =
      99, 117, 109, 101, 110, 116, 
     115,  92,  71, 105, 116,  72, 
     117,  98,  92,  86,  71,  80, 
-     51,  51,  48,  95,  69, 110, 
-    103, 105, 110, 101,  51,  92, 
+     51,  51,  52,  95,  69, 110, 
+    103, 105, 110, 101,  52,  92, 
      87, 105, 110, 116, 101, 114, 
      69, 110, 103, 105, 110, 101, 
      92,  69, 120, 116, 101, 114, 

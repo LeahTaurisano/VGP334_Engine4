@@ -31,7 +31,7 @@
     dcl t0  // pin<0,1,2,3>
     dcl t1  // pin<4,5,6,7>
 
-#line 17 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 17 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     mad r0.xyz, c0, t0.w, -t0
     mov r1.xyz, t0  // pin<0,1,2>
     mad r0.xyz, t1.w, r0, r1  // ApplyFog::color<0,1,2>
@@ -54,10 +54,10 @@ ret
 
 const BYTE BasicEffect_PSBasic[] =
 {
-     68,  88,  66,  67, 211, 237, 
-    162, 218, 186, 249,  26,  24, 
-     36,  81, 186,  93, 157, 187, 
-    242, 252,   1,   0,   0,   0, 
+     68,  88,  66,  67, 208,  87, 
+    234, 202, 187, 136,  92, 101, 
+     12, 173, 131, 146, 123, 216, 
+     92, 162,   1,   0,   0,   0, 
     236,   3,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     188,   2,   0,   0, 112,   3, 
@@ -87,8 +87,8 @@ const BYTE BasicEffect_PSBasic[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 

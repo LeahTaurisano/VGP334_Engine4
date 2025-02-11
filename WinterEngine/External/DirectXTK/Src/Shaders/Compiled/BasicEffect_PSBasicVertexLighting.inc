@@ -31,7 +31,7 @@
     dcl t0  // pin<0,1,2,3>
     dcl t1  // pin<4,5,6,7>
 
-#line 23 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 23 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     mov r0, t0  // pin<0,1,2,3>
     mad r0.xyz, t1, r0.w, r0  // AddSpecular::color<0,1,2>
 
@@ -58,10 +58,10 @@ ret
 
 const BYTE BasicEffect_PSBasicVertexLighting[] =
 {
-     68,  88,  66,  67,   4, 124, 
-     37, 150,  59,  32, 179,  43, 
-    198, 134, 215, 164,  34, 248, 
-     59,  69,   1,   0,   0,   0, 
+     68,  88,  66,  67,   8, 152, 
+    103, 125, 180, 120, 194,  56, 
+     79, 113,  65, 187,  60, 133, 
+    162, 120,   1,   0,   0,   0, 
     104,   4,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
      20,   3,   0,   0, 236,   3, 
@@ -91,8 +91,8 @@ const BYTE BasicEffect_PSBasicVertexLighting[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 

@@ -49,7 +49,7 @@
     dcl_texcoord3 v3  // vin<9,10,11,12>
     dcl_texcoord4 v4  // vin<13,14,15,16>
 
-#line 15 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Skinning.fxh"
+#line 15 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Skinning.fxh"
     mul r0, v3, c243.x
     mova a0, r0.yxzw
     mul r1, v4.y, c26[a0.x]
@@ -77,7 +77,7 @@
     dp4 r1.z, v0, r3  // Skin::vin<2>
     dp3 r0.z, v1, r3  // ::Skin<2>
 
-#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     mov r1.w, v0.w
     dp4 oPos.z, r1, c24  // ::VSSkinnedPixelLightingFourBones<15>
     dp4 oT1.x, r1, c15  // ::VSSkinnedPixelLightingFourBones<2>
@@ -90,17 +90,17 @@
     rsq r0.x, r0.x
     mul oT2.xyz, r0.x, r2  // ::VSSkinnedPixelLightingFourBones<6,7,8>
 
-#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 11 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     dp4 r0.x, r1, c14
     max r0.x, r0.x, c243.y
     min oT1.w, r0.x, c243.z  // ::VSSkinnedPixelLightingFourBones<5>
 
-#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
+#line 82 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Lighting.fxh"
     dp4 r0.x, r1, c22  // ::vout<0>
     dp4 r0.y, r1, c23  // ::vout<1>
     dp4 r0.z, r1, c25  // ::vout<3>
 
-#line 302 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
+#line 302 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
     mad oPos.xy, r0.z, c242, r0  // ::VSSkinnedPixelLightingFourBones<13,14>
     mov oPos.w, r0.z  // ::VSSkinnedPixelLightingFourBones<16>
 
@@ -168,10 +168,10 @@ ret
 
 const BYTE SkinnedEffect_VSSkinnedPixelLightingFourBones[] =
 {
-     68,  88,  66,  67, 238,  22, 
-     79, 235, 162,   8,  76,  76, 
-    147, 165, 184,  78, 159,  45, 
-    208, 234,   1,   0,   0,   0, 
+     68,  88,  66,  67,  28, 251, 
+    116,  76, 133, 139, 235, 185, 
+    240,  86, 251, 239, 199, 213, 
+    174,  95,   1,   0,   0,   0, 
      44,  18,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
      24,  11,   0,   0, 200,  16, 
@@ -201,9 +201,9 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingFourBones[] =
      68, 111,  99, 117, 109, 101, 
     110, 116, 115,  92,  71, 105, 
     116,  72, 117,  98,  92,  86, 
-     71,  80,  51,  51,  48,  95, 
+     71,  80,  51,  51,  52,  95, 
      69, 110, 103, 105, 110, 101, 
-     51,  92,  87, 105, 110, 116, 
+     52,  92,  87, 105, 110, 116, 
     101, 114,  69, 110, 103, 105, 
     110, 101,  92,  69, 120, 116, 
     101, 114, 110,  97, 108,  92, 
@@ -219,9 +219,9 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingFourBones[] =
      92,  68, 111,  99, 117, 109, 
     101, 110, 116, 115,  92,  71, 
     105, 116,  72, 117,  98,  92, 
-     86,  71,  80,  51,  51,  48, 
+     86,  71,  80,  51,  51,  52, 
      95,  69, 110, 103, 105, 110, 
-    101,  51,  92,  87, 105, 110, 
+    101,  52,  92,  87, 105, 110, 
     116, 101, 114,  69, 110, 103, 
     105, 110, 101,  92,  69, 120, 
     116, 101, 114, 110,  97, 108, 
@@ -238,8 +238,8 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingFourBones[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 
@@ -255,9 +255,9 @@ const BYTE SkinnedEffect_VSSkinnedPixelLightingFourBones[] =
      92,  68, 111,  99, 117, 109, 
     101, 110, 116, 115,  92,  71, 
     105, 116,  72, 117,  98,  92, 
-     86,  71,  80,  51,  51,  48, 
+     86,  71,  80,  51,  51,  52, 
      95,  69, 110, 103, 105, 110, 
-    101,  51,  92,  87, 105, 110, 
+    101,  52,  92,  87, 105, 110, 
     116, 101, 114,  69, 110, 103, 
     105, 110, 101,  92,  69, 120, 
     116, 101, 114, 110,  97, 108, 

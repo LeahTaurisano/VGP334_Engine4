@@ -44,7 +44,7 @@
     dcl t2.xyz  // pixel<10,11,12>
     dcl t4.xyz  // pixel<16,17,18>
 
-#line 154 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\DGSLPhong.hlsl"
+#line 154 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\DGSLPhong.hlsl"
     mul r0.w, t0.w, t0.w
     cmp r0, -r0.w, c13.x, c13.y
     texkill r0
@@ -192,10 +192,10 @@ ret
 
 const BYTE DGSLPhong_mainTk[] =
 {
-     68,  88,  66,  67, 121,  84, 
-      4, 148,  29, 190,  63, 131, 
-     45,  83,  53,  86,  82, 198, 
-    146,  80,   1,   0,   0,   0, 
+     68,  88,  66,  67, 229,   3, 
+     60,   3,  83, 131, 124, 189, 
+     79,  65, 185,  96, 150, 209, 
+     77,  74,   1,   0,   0,   0, 
      80,  17,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     212,   9,   0,   0,  48,  16, 
@@ -235,8 +235,8 @@ const BYTE DGSLPhong_mainTk[] =
     109, 101, 110, 116, 115,  92, 
      71, 105, 116,  72, 117,  98, 
      92,  86,  71,  80,  51,  51, 
-     48,  95,  69, 110, 103, 105, 
-    110, 101,  51,  92,  87, 105, 
+     52,  95,  69, 110, 103, 105, 
+    110, 101,  52,  92,  87, 105, 
     110, 116, 101, 114,  69, 110, 
     103, 105, 110, 101,  92,  69, 
     120, 116, 101, 114, 110,  97, 

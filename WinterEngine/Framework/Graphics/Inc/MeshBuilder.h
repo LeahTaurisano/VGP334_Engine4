@@ -12,6 +12,7 @@ namespace WinterEngine::Graphics
 
 		//Cube
 		static MeshPC CreateCubePC(float size);
+		static Mesh CreateCube(float size);
 
 		//Rectangle
 		static MeshPC CreateRectPC(float width, float height, float depth);

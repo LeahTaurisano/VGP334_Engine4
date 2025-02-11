@@ -36,7 +36,7 @@
     dcl_2d s0
     dcl_2d s1
 
-#line 108 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\DualTextureEffect.fx"
+#line 108 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\DualTextureEffect.fx"
     mov r0.xy, t1.wzyx
     texld r0, r0, s1  // ::overlay<0,1,2,3>
     texld r1, t1, s0  // ::color<0,1,2,3>
@@ -69,10 +69,10 @@ ret
 
 const BYTE DualTextureEffect_PSDualTextureNoFog[] =
 {
-     68,  88,  66,  67, 239, 164, 
-     92, 137,  18, 221,  44,  39, 
-    106, 210, 153,  10,  70, 197, 
-     52, 123,   1,   0,   0,   0, 
+     68,  88,  66,  67, 154, 106, 
+    206, 224, 235, 188, 229, 102, 
+    210, 117, 154,  67, 136, 228, 
+     43,  66,   1,   0,   0,   0, 
      80,   5,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     136,   3,   0,   0, 180,   4, 
@@ -101,8 +101,8 @@ const BYTE DualTextureEffect_PSDualTextureNoFog[] =
      99, 117, 109, 101, 110, 116, 
     115,  92,  71, 105, 116,  72, 
     117,  98,  92,  86,  71,  80, 
-     51,  51,  48,  95,  69, 110, 
-    103, 105, 110, 101,  51,  92, 
+     51,  51,  52,  95,  69, 110, 
+    103, 105, 110, 101,  52,  92, 
      87, 105, 110, 116, 101, 114, 
      69, 110, 103, 105, 110, 101, 
      92,  69, 120, 116, 101, 114, 

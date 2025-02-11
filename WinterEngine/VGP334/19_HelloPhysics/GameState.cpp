@@ -3,6 +3,7 @@
 using namespace WinterEngine;
 using namespace WinterEngine::Graphics;
 using namespace WinterEngine::Input;
+using namespace WinterEngine::Physics;
 
 void GameState::Initialize()
 {
@@ -32,9 +33,45 @@ void GameState::Initialize()
 
 	mGroundShape.InitializeHull({ 5.0f, 0.5f, 5.0f }, { 0.0f, -0.5f, 0.0f });
 	mGroundRB.Initialize(mGround.transform, mGroundShape);
+
+	Mesh boxShape = MeshBuilder::CreateCube(1.0f);
+	TextureId boxTexture = TextureCache::Get()->LoadTexture("sprites/yellow.jpg");
+
+	float yOffset = 4.5f;
+	float xOffset = 0.0f;
+	int rowCount = 1;
+	int boxIndex = 0;
+	mBoxes.resize(10);
+	while (boxIndex < 10)
+	{
+		xOffset = -((static_cast<float>(rowCount) - 1.0f) * 0.5f);
+		for (int r = 0; r < rowCount; ++r)
+		{
+			BoxData& newBox = mBoxes[boxIndex];
+			newBox.box.meshBuffer.Initialize(boxShape);
+			newBox.box.diffuseMapId = boxTexture;
+			newBox.box.transform.position = { xOffset, yOffset, 4.0f };
+			newBox.boxShape.InitializeBox({ 0.5f, 0.5f, 0.5f });
+			xOffset += 1.0f;
+			++boxIndex;
+		}
+		yOffset -= 1.0f;
+		rowCount += 1;
+	}
+
+	for (BoxData& box : mBoxes)
+	{
+		box.boxRB.Initialize(box.box.transform, box.boxShape, 1.0f);
+	}
 }
 void GameState::Terminate()
 {
+	for (BoxData& box : mBoxes)
+	{
+		box.boxRB.Terminate();
+		box.boxShape.Terminate();
+	}
+
 	mGroundRB.Terminate();
 	mGroundShape.Terminate();
 	mBallRB.Terminate();
@@ -84,12 +121,22 @@ void GameState::Update(float deltaTime)
 	{
 		mBallRB.SetVelocity({ 0.0f, 10.0f, 0.0f });
 	}
+	if (InputSystem::Get()->IsMousePressed(MouseButton::LBUTTON))
+	{
+		Math::Vector3 spawnPos = mCamera.GetPosition() + (mCamera.GetDirection() * 0.5f);
+		mBallRB.SetPosition(spawnPos);
+		mBallRB.SetVelocity(mCamera.GetDirection() * 20.0f);
+	}
 }
 void GameState::Render()
 {
 	mStandardEffect.Begin();
 		mStandardEffect.Render(mGround);
 		mStandardEffect.Render(mBall);
+		for (BoxData& box : mBoxes)
+		{
+			mStandardEffect.Render(box.box);
+		}
 	mStandardEffect.End();
 }
 
@@ -107,5 +154,9 @@ void GameState::DebugUI()
 		ImGui::ColorEdit4("Diffuse##Light", &mDirectionalLight.diffuse.r);
 		ImGui::ColorEdit4("Specular##Light", &mDirectionalLight.specular.r);
 	}
+	mStandardEffect.DebugUI();
+	PhysicsWorld::Get()->DebugUI();
 	ImGui::End();
-}
+
+	SimpleDraw::Render(mCamera);
+}	

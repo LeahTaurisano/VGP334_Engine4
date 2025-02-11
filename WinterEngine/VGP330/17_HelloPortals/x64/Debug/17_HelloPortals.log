@@ -1,10 +1,1 @@
-﻿  GameState.cpp
-D:\VGP242\WinterEngine\VGP330\17_HelloPortals\GameState.cpp(27,149): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-D:\VGP242\WinterEngine\VGP330\17_HelloPortals\GameState.cpp(27,89): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-D:\VGP242\WinterEngine\VGP330\17_HelloPortals\GameState.cpp(28,89): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-D:\VGP242\WinterEngine\VGP330\17_HelloPortals\GameState.cpp(37,149): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-D:\VGP242\WinterEngine\VGP330\17_HelloPortals\GameState.cpp(37,89): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-D:\VGP242\WinterEngine\VGP330\17_HelloPortals\GameState.cpp(38,89): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-  WinMain.cpp
-  Generating Code...
-  17_HelloPortals.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\17_HelloPortals.exe
+﻿

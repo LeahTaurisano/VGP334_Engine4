@@ -34,11 +34,11 @@
     dcl t2.xy  // pin<8,9>
     dcl_2d s0
 
-#line 350 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
+#line 350 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
     texld r0, t2, s0
     mul r0, r0, t0  // ::color<0,1,2,3>
 
-#line 23 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 23 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     mad r0.xyz, t1, r0.w, r0  // AddSpecular::color<0,1,2>
     mov oC0, r0  // ::PSSkinnedVertexLightingNoFog<0,1,2,3>
 
@@ -61,10 +61,10 @@ ret
 
 const BYTE SkinnedEffect_PSSkinnedVertexLightingNoFog[] =
 {
-     68,  88,  66,  67, 113, 180, 
-    205, 168,  45, 180,  29, 143, 
-    143, 135, 134, 201,  60,  79, 
-    208,  22,   1,   0,   0,   0, 
+     68,  88,  66,  67,  56, 131, 
+    238, 248, 116, 224, 164, 203, 
+     33,  42, 183,  42, 252,  44, 
+     32, 198,   1,   0,   0,   0, 
      20,   5,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     152,   3,   0,   0, 120,   4, 
@@ -92,9 +92,9 @@ const BYTE SkinnedEffect_PSSkinnedVertexLightingNoFog[] =
      68, 111,  99, 117, 109, 101, 
     110, 116, 115,  92,  71, 105, 
     116,  72, 117,  98,  92,  86, 
-     71,  80,  51,  51,  48,  95, 
+     71,  80,  51,  51,  52,  95, 
      69, 110, 103, 105, 110, 101, 
-     51,  92,  87, 105, 110, 116, 
+     52,  92,  87, 105, 110, 116, 
     101, 114,  69, 110, 103, 105, 
     110, 101,  92,  69, 120, 116, 
     101, 114, 110,  97, 108,  92, 
@@ -111,8 +111,8 @@ const BYTE SkinnedEffect_PSSkinnedVertexLightingNoFog[] =
     111,  99, 117, 109, 101, 110, 
     116, 115,  92,  71, 105, 116, 
      72, 117,  98,  92,  86,  71, 
-     80,  51,  51,  48,  95,  69, 
-    110, 103, 105, 110, 101,  51, 
+     80,  51,  51,  52,  95,  69, 
+    110, 103, 105, 110, 101,  52, 
      92,  87, 105, 110, 116, 101, 
     114,  69, 110, 103, 105, 110, 
     101,  92,  69, 120, 116, 101, 

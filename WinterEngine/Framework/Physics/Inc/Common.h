@@ -13,6 +13,8 @@
 #include <Bullet/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h>
 #include <Bullet/BulletSoftBody/btSoftBodySolvers.h>
 
+#define USE_SOFT_BODY //Disable if not using Soft Body
+
 //helper function
 template<class T>
 inline void SafeDelete(T*& ptr)

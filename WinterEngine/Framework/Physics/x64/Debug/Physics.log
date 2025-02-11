@@ -1,3 +1,14 @@
-﻿  PhysicsWorld.cpp
-D:\VGP242\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(12,51): warning C4305: 'argument': truncation from 'double' to 'float'
-  Physics.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\Physics.lib
+﻿  SoftBody.cpp
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(14,51): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file '/Src/SoftBody.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physics\Src\SoftBody.cpp(24,71): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Src/SoftBody.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physics\Src\SoftBody.cpp(39,22): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Src/SoftBody.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physics\Src\SoftBody.cpp(73,62): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file '/Src/SoftBody.cpp')
+  
+  Physics.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\Physics.lib

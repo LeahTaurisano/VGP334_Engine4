@@ -41,11 +41,11 @@
     dcl t2.xy  // pin<8,9>
     dcl_2d s0
 
-#line 338 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
+#line 338 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\SkinnedEffect.fx"
     texld r0, t2, s0
     mul r0, r0, t0  // ::color<0,1,2,3>
 
-#line 23 "C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
+#line 23 "C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\src\Shaders\Common.fxh"
     mad r1.xyz, t1, r0.w, r0  // AddSpecular::color<0,1,2>
 
 #line 17
@@ -75,10 +75,10 @@ ret
 
 const BYTE SkinnedEffect_PSSkinnedVertexLighting[] =
 {
-     68,  88,  66,  67, 192,  35, 
-     70,  81, 236,  62, 149,  41, 
-    240, 222, 255,  21, 146, 167, 
-    153,  48,   1,   0,   0,   0, 
+     68,  88,  66,  67, 187, 162, 
+     73, 209,  40,  49, 162,   1, 
+     16, 184,  56, 248,  78, 198, 
+     55, 154,   1,   0,   0,   0, 
     216,   5,   0,   0,   4,   0, 
       0,   0,  48,   0,   0,   0, 
     252,   3,   0,   0,  60,   5, 
@@ -108,9 +108,9 @@ const BYTE SkinnedEffect_PSSkinnedVertexLighting[] =
      68, 111,  99, 117, 109, 101, 
     110, 116, 115,  92,  71, 105, 
     116,  72, 117,  98,  92,  86, 
-     71,  80,  51,  51,  48,  95, 
+     71,  80,  51,  51,  52,  95, 
      69, 110, 103, 105, 110, 101, 
-     51,  92,  87, 105, 110, 116, 
+     52,  92,  87, 105, 110, 116, 
     101, 114,  69, 110, 103, 105, 
     110, 101,  92,  69, 120, 116, 
     101, 114, 110,  97, 108,  92, 
@@ -127,8 +127,8 @@ const BYTE SkinnedEffect_PSSkinnedVertexLighting[] =
     111,  99, 117, 109, 101, 110, 
     116, 115,  92,  71, 105, 116, 
      72, 117,  98,  92,  86,  71, 
-     80,  51,  51,  48,  95,  69, 
-    110, 103, 105, 110, 101,  51, 
+     80,  51,  51,  52,  95,  69, 
+    110, 103, 105, 110, 101,  52, 
      92,  87, 105, 110, 116, 101, 
     114,  69, 110, 103, 105, 110, 
     101,  92,  69, 120, 116, 101, 
