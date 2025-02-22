@@ -1,38 +1,34 @@
 ﻿  GameState.cpp
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
-  (compiling source file 'GameState.cpp')
-  
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
-  (compiling source file 'GameState.cpp')
-  
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
-  (compiling source file 'GameState.cpp')
-  
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
-  (compiling source file 'GameState.cpp')
-  
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
-  (compiling source file 'GameState.cpp')
-  
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
-  (compiling source file 'GameState.cpp')
-  
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(14,51): warning C4305: 'argument': truncation from 'double' to 'float'
-  (compiling source file 'GameState.cpp')
-  
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(74,22): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(78,134): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(78,80): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(149,79): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
-C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
-  (compiling source file 'GameState.cpp')
-  C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
-  the template instantiation context (the oldest one first) is
-  	C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
-  	see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(14,51): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\VGP242\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(74,22): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+D:\VGP242\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(78,134): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+D:\VGP242\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(78,80): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+D:\VGP242\WinterEngine\VGP334\20_HelloSoftBody\GameState.cpp(149,79): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4): message : see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
           with
           [
               DBVTNODE=btDbvtNode
           ]
-  
-  20_HelloSoftBody.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\20_HelloSoftBody.exe
+  WinMain.cpp
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(14,51): warning C4305: 'argument': truncation from 'double' to 'float'
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4): message : see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
+          with
+          [
+              DBVTNODE=btDbvtNode
+          ]
+  Generating Code...
+  20_HelloSoftBody.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\20_HelloSoftBody.exe

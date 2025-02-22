@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="Inc\Common.h" />
     <ClInclude Include="Inc\Constants.h" />
+    <ClInclude Include="Inc\Range.h" />
     <ClInclude Include="Inc\WinterMath.h" />
     <ClInclude Include="Inc\Matrix4.h" />
     <ClInclude Include="Inc\Quaternion.h" />

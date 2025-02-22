@@ -36,6 +36,9 @@
     <ClInclude Include="Inc\Vector3.h">
       <Filter>Inc</Filter>
     </ClInclude>
+    <ClInclude Include="Inc\Range.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Precompile.cpp">

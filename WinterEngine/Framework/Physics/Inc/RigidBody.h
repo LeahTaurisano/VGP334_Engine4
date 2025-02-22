@@ -12,11 +12,14 @@ namespace WinterEngine::Physics
 		RigidBody() = default;
 		~RigidBody() override;
 
-		void Initialize(WinterEngine::Graphics::Transform& graphicsTransform, const CollisionShape& shape, float mass = 0.0f);
+		void Initialize(WinterEngine::Graphics::Transform& graphicsTransform, const CollisionShape& shape, float mass = 0.0f, bool addToWorld = true);
 		void Terminate();
 
 		void SetPosition(const WinterEngine::Math::Vector3& position);
 		void SetVelocity(const WinterEngine::Math::Vector3& velocity);
+
+		void Activate();
+		void Deactive();
 
 		bool IsDynamic() const;
 
