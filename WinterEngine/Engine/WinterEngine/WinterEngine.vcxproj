@@ -138,17 +138,23 @@
     <ClInclude Include="Inc\App.h" />
     <ClInclude Include="Inc\AppState.h" />
     <ClInclude Include="Inc\Common.h" />
+    <ClInclude Include="Inc\Event.h" />
+    <ClInclude Include="Inc\EventManager.h" />
     <ClInclude Include="Inc\WinterEngine.h" />
     <ClInclude Include="Src\Precompile.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\App.cpp" />
+    <ClCompile Include="Src\EventManager.cpp" />
     <ClCompile Include="Src\Precompile.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Src\WinterEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Audio\Audio.vcxproj">
+      <Project>{380fb1a7-cc92-4f8d-9254-6834182c7f8d}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\Framework\Core\Core.vcxproj">
       <Project>{fe43fae6-2d45-450d-a80e-78b2e8703e25}</Project>
     </ProjectReference>

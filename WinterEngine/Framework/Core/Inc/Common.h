@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <cstdint>
 #include <filesystem>
+#include <functional>
 #include <list>
 #include <map>
 #include <memory>

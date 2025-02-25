@@ -1,0 +1,1 @@
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\Audio\Bin\Desktop_2022\x64\Debug\DirectXTKAudioWin8.lib

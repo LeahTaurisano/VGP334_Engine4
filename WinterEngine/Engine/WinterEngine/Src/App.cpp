@@ -1,12 +1,14 @@
 #include "Precompile.h"
 #include "App.h"
 #include "AppState.h"
+#include "EventManager.h"
 
 using namespace WinterEngine;
 using namespace WinterEngine::Core;
 using namespace WinterEngine::Graphics;
 using namespace WinterEngine::Input;
 using namespace WinterEngine::Physics;
+using namespace WinterEngine::Audio;
 
 void App::ChangeState(const std::string& stateName)
 {
@@ -36,6 +38,9 @@ void App::Run(const AppConfig& config)
 	DebugUI::StaticInitialize(handle, false, true);
 	TextureCache::StaticInitialize("../../Assets/Images/");
 	ModelCache::StaticInitialize();
+	EventManager::StaticInitialize();
+	AudioSystem::StaticInitialize();
+	SoundEffectManager::StaticInitialize("../../Assets/Sounds/");
 	
 	PhysicsWorld::Settings settings;
 	PhysicsWorld::StaticInitialize(settings);
@@ -56,12 +61,15 @@ void App::Run(const AppConfig& config)
 			break;
 		}
 
+		AudioSystem::Get()->Update();
+
 		if (mNextState != nullptr)
 		{
 			mCurrentState->Terminate();
 			mCurrentState = std::exchange(mNextState, nullptr);
 			mCurrentState->Initialize();
 		}
+
 		float deltaTime = TimeUtil::GetDeltaTime();
 		mCurrentState->Update(deltaTime);
 		PhysicsWorld::Get()->Update(deltaTime);
@@ -77,7 +85,11 @@ void App::Run(const AppConfig& config)
 
 	mCurrentState->Terminate();
 
+
 	PhysicsWorld::StaticTerminate();
+	SoundEffectManager::StaticTerminate();
+	AudioSystem::StaticTerminate();
+	EventManager::StaticTerminate();
 	ModelCache::StaticTerminate();
 	TextureCache::StaticTerminate();
 	SimpleDraw::StaticTerminate();
