@@ -12,8 +12,10 @@ public:
 	void DebugUI() override;
 
 protected:
+	void OnEnterPressedEvent(const WinterEngine::Event& e);
 	void OnMoveEvent();
-	void OneSpacePressedEvent(const WinterEngine::Event& e);
+	void OnPeakEvent();
+	void OnSpacePressedEvent(const WinterEngine::Event& e);
 
 	WinterEngine::Graphics::Camera mCamera;
 	
@@ -25,6 +27,7 @@ protected:
 
 	WinterEngine::Math::Vector3 mOffset = WinterEngine::Math::Vector3::Zero;
 	WinterEngine::ListenerId mSpacePressedEventId = 0;
+	WinterEngine::ListenerId mEnterPressedEventId = 0;
 
 	WinterEngine::Audio::SoundId mGunEventId = 0;
 	WinterEngine::Audio::SoundId mExplosionEventId = 0;

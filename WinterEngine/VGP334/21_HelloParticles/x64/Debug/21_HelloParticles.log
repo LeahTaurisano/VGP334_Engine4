@@ -65,4 +65,4 @@ C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet
           ]
   
   Generating Code...
-  21_HelloParticles.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\21_HelloParticles.exe
+LINK : fatal error LNK1104: cannot open file 'C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib'

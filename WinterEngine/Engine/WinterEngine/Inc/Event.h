@@ -5,7 +5,8 @@ namespace WinterEngine
 	enum class EventType
 	{
 		None,
-		SpacePressed
+		SpacePressed,
+		EnterPressed
 	};
 
 	class Event
@@ -30,5 +31,11 @@ namespace WinterEngine
 		// time
 		// animation name...
 		//include anything relevant here
+	};
+
+	class EnterPressedEvent : public Event
+	{
+	public:
+		EnterPressedEvent() : Event(EventType::EnterPressed) {}
 	};
 }

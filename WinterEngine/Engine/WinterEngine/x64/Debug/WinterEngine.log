@@ -1,1 +1,12 @@
-﻿  WinterEngine.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\WinterEngine.lib
+﻿  App.cpp
+C:\Users\LCV2242924\Documents\Test\Framework\Physics\Inc\PhysicsWorld.h(14,51): warning C4305: 'argument': truncation from 'double' to 'float'
+  (compiling source file '/Src/App.cpp')
+  C:\Users\LCV2242924\Documents\Test\Framework\Physics\Inc\PhysicsWorld.h(17,3):
+  This diagnostic occurred in the compiler generated function 'WinterEngine::Physics::PhysicsWorld::Settings::Settings(void)'
+  C:\Users\LCV2242924\Documents\Test\Engine\WinterEngine\Src\App.cpp(45,25):
+  see reference to function 'WinterEngine::Physics::PhysicsWorld::Settings::Settings(void)'
+  
+  EventManager.cpp
+  WinterEngine.cpp
+  Generating Code...
+  WinterEngine.vcxproj -> C:\Users\LCV2242924\Documents\Test\x64\Debug\WinterEngine.lib

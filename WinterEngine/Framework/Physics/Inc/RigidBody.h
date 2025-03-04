@@ -17,6 +17,7 @@ namespace WinterEngine::Physics
 
 		void SetPosition(const WinterEngine::Math::Vector3& position);
 		void SetVelocity(const WinterEngine::Math::Vector3& velocity);
+		const Math::Vector3 GetVelocity() const;
 
 		void Activate();
 		void Deactive();

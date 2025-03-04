@@ -46,6 +46,11 @@ void RigidBody::SetVelocity(const WinterEngine::Math::Vector3& velocity)
 	mRigidBody->setLinearVelocity(TobtVector3(velocity));
 }
 
+const Math::Vector3 WinterEngine::Physics::RigidBody::GetVelocity() const
+{
+	return ToVector3(mRigidBody->getLinearVelocity());
+}
+
 void RigidBody::Activate()
 {
 	PhysicsWorld::Get()->Register(this);

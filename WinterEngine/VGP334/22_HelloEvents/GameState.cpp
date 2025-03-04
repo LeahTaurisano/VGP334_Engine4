@@ -34,8 +34,10 @@ void GameState::Initialize()
 		.AddPositionKey({ -0.5f, 1.5f, 0.0f }, 0.0f)
 		.AddPositionKey({ 0.0f, 0.5f, 0.0f }, 0.3f)
 		.AddPositionKey({ 0.5f, 1.5f, 0.0f }, 1.0f)
+		.AddEventKey(std::bind(&GameState::OnPeakEvent, this), 2.0f)
 		.AddPositionKey({ 0.0f, 0.5f, 0.0f }, 1.3f)
 		.AddPositionKey({ -0.5f, 1.5f, 0.0f }, 2.0f)
+		.AddEventKey(std::bind(&GameState::OnPeakEvent, this), 2.0f)
 		.AddScaleKey({ 1.0f, 1.0f, 1.0f }, 0.25f)
 		.AddScaleKey({ 1.0f, 0.5f, 1.0f }, 0.3f)
 		.AddScaleKey({ 1.0f, 1.0f, 1.0f }, 0.35f)
@@ -51,13 +53,15 @@ void GameState::Initialize()
 		.Build();
 
 	EventManager* em = EventManager::Get();
-	mSpacePressedEventId = em->AddListener(EventType::SpacePressed, std::bind(&GameState::OneSpacePressedEvent, this, std::placeholders::_1));
+	mSpacePressedEventId = em->AddListener(EventType::SpacePressed, std::bind(&GameState::OnSpacePressedEvent, this, std::placeholders::_1));
+	mEnterPressedEventId = em->AddListener(EventType::EnterPressed, std::bind(&GameState::OnEnterPressedEvent, this, std::placeholders::_1));
 
 	mGunEventId = SoundEffectManager::Get()->Load("photongun1.wav");
 	mExplosionEventId = SoundEffectManager::Get()->Load("explosion.wav");
 }
 void GameState::Terminate()
 {
+	EventManager::Get()->RemoveListener(EventType::EnterPressed, mEnterPressedEventId);
 	EventManager::Get()->RemoveListener(EventType::SpacePressed, mSpacePressedEventId);
 	mGround.Terminate();
 	mBall.Terminate();
@@ -81,6 +85,11 @@ void GameState::Update(float deltaTime)
 	{
 		SpacePressedEvent spe;
 		EventManager::Broadcast(spe);
+	}
+	if (InputSystem::Get()->IsKeyPressed(KeyCode::ENTER))
+	{
+		EnterPressedEvent ent;
+		EventManager::Broadcast(ent);
 	}
 
 
@@ -119,13 +128,23 @@ void GameState::Update(float deltaTime)
 	}
 }
 
+void GameState::OnEnterPressedEvent(const WinterEngine::Event& e)
+{
+	mOffset.y += 1.0f;
+}
+
 void GameState::OnMoveEvent()
 {
 	mOffset.x += 0.5f;
 	SoundEffectManager::Get()->Play(mExplosionEventId);
 }
 
-void GameState::OneSpacePressedEvent(const WinterEngine::Event& e)
+void GameState::OnPeakEvent()
+{
+	SoundEffectManager::Get()->Play(mGunEventId); //Duplicating this so I can focus on my final
+}
+
+void GameState::OnSpacePressedEvent(const WinterEngine::Event& e)
 {
 	LOG("Hi Darren");
 	SoundEffectManager::Get()->Play(mGunEventId);
