@@ -3,3 +3,5 @@ C:\Users\LCV2242924\Documents\GitHub\VGP242\WinterEngine\External\DirectXTK\Bin\
 D:\VGP242\WinterEngine\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
 C:\Users\LCV2242924\Documents\GitHub\VGP330_Engine3\WinterEngine\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
 C:\Users\LCV2242924\Documents\Test\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib
+C:\Users\LCV2242924\Documents\TestingAgain\WinterEngine\External\DirectXTK\Bin\Desktop_2019\x64\Debug\DirectXTK.lib

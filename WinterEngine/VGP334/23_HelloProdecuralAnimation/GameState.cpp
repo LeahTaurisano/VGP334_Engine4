@@ -4,36 +4,55 @@ using namespace WinterEngine;
 using namespace WinterEngine::Graphics;
 using namespace WinterEngine::Input;
 using namespace WinterEngine::Audio;
+using namespace WinterEngine::Physics;
 
 void GameState::Initialize()
 {
-	mCamera.SetPosition({ 0.0f, 2.0f, -3.0f });
-	mCamera.SetLookAt({ 0.0f, 1.0f, 0.0f });
+	srand(time(nullptr));
 
+	//Camera
+	mCamera.SetPosition({ 0.0f, 30.0f, -10.0f });
+	mCamera.SetLookAt({0.0f, 0.0f, 0.0f});
+
+	//Lighting
 	mDirectionalLight.direction = Normalize({ 1.0f, -1.0f, 1.0f });
 	mDirectionalLight.ambient = { 0.3f, 0.3f, 0.3f, 1.0f };
 	mDirectionalLight.diffuse = { 0.7f, 0.7f, 0.7f, 1.0f };
 	mDirectionalLight.specular = { 0.9f, 0.9f, 0.9f, 1.0f };
 
+	//Standard Effect
 	std::filesystem::path shaderFilePath = L"../../Assets/Shaders/Standard.fx";
 	mStandardEffect.Initialize(shaderFilePath);
 	mStandardEffect.SetCamera(mCamera);
 	mStandardEffect.SetDirectionalLight(mDirectionalLight);
 
+	//Ground
 	Mesh ground = MeshBuilder::CreateGroundPlane(30, 30, 1.0f);
 	mGround.meshBuffer.Initialize(ground);
 	mGround.diffuseMapId = TextureCache::Get()->LoadTexture("misc/concrete.jpg");
 	mGroundShape.InitializeHull({ 15.0f, 0.5f, 15.0f }, { 0.0f, -0.5, 0.0f });
 	mGroundRB.Initialize(mGround.transform, mGroundShape);
 
+	//Enemy
+	float randX = rand() % 30;
+	float randZ = rand() % 30;
+	enemyTargetPos = { randX - 15, 1.0f, randZ - 15 };
+	mEnemy.Initialize(L"../../Assets/Models/Character03/CastleGuard.model", &mEnemyAnimator);
+	ModelCache::Get()->AddAnimation(mEnemy.modelId, L"../../Assets/Models/Character03/Run.model");
+	mEnemyAnimator.Initialize(mEnemy.modelId);
+	mEnemyAnimator.PlayAnimation(1, true);
 	mOrbRadius = 1.0f;
 	Mesh orb = MeshBuilder::CreateSphere(10, 10, mOrbRadius);
 	mOrb.meshBuffer.Initialize(orb);
 	mOrb.diffuseMapId = TextureCache::Get()->LoadTexture("Sprites/blue.jpg");
-	float randX = rand() % 30;
-	float randZ = rand() % 30;
+	randX = rand() % 30;
+	randZ = rand() % 30;
 	mOrb.transform.position = { randX - 15, 1.0f, randZ - 15 };
+	enemyStartPos = mOrb.transform.position;
 
+	UpdateEnemyVisual();
+
+	//Snake
 	numSegments = 20;
 	activeSegments = 1;
 	float maxSphereSize = 1.0f;
@@ -50,12 +69,34 @@ void GameState::Initialize()
 		newPart.isActive = static_cast<int>(i) < activeSegments ? true : false;
 			
 	}
-
 	mBodyAnchorShape.InitializeSphere(maxSphereSize);
 	mBodyAnchorRB.Initialize(mBodyParts[0].segment.transform, mBodyAnchorShape, 1.0f);
+
+	//Particles
+	mParticleSystemEffect.Initialize();
+	mParticleSystemEffect.SetCamera(mCamera);
+
+	ParticleSystemInfo particleInfo;
+	particleInfo.textureId = TextureCache::Get()->LoadTexture("sprites/explosion.png");
+	particleInfo.maxParticles = 100;
+	particleInfo.particlesPerEmit = { 10, 15 };
+	particleInfo.delay = 0.0f;
+	particleInfo.lifeTime = 0.0f;
+	particleInfo.timeBetweenEmit = { 0.1f, 0.2f };
+	particleInfo.spawnAngle = { -30.0f, 30.0f };
+	particleInfo.spawnSpeed = { 1.0f, 3.0f };
+	particleInfo.spawnLifetime = { 0.5f, 2.0f };
+	particleInfo.spawnDirection = Math::Vector3::YAxis;
+	particleInfo.spawnPosition = Math::Vector3::Zero;
+	particleInfo.startScale = { Math::Vector3::One, Math::Vector3::One };
+	particleInfo.endScale = { Math::Vector3::One, Math::Vector3::One };
+	particleInfo.startColor = { Colors::DarkRed, Colors::Red };
+	particleInfo.endColor = { Colors::Red, Colors::PaleVioletRed };
+	mParticleSystem.Initialize(particleInfo);
 }
 void GameState::Terminate()
 {
+	mParticleSystem.Terminate();
 	for (auto& part : mBodyParts)
 	{
 		part.segment.Terminate();
@@ -63,6 +104,7 @@ void GameState::Terminate()
 	mBodyAnchorRB.Terminate();
 	mBodyAnchorShape.Terminate();
 	mOrb.Terminate();
+	mEnemy.Terminate();
 	mGroundRB.Terminate();
 	mGroundShape.Terminate();
 	mGround.Terminate();
@@ -72,7 +114,7 @@ void GameState::Terminate()
 void GameState::Update(float deltaTime)
 {
 	InputSystem* input = InputSystem::Get();
-	const float speed = 5.0f;
+	const float speed = 10.0f;
 	Vector3 velocity = Vector3::Zero;
 	if (input->IsKeyDown(KeyCode::UP))
 	{
@@ -133,15 +175,50 @@ void GameState::Update(float deltaTime)
 		mCamera.Yaw(input->GetMouseMoveX() * turnSpeed * deltaTime);
 		mCamera.Pitch(input->GetMouseMoveY() * turnSpeed * deltaTime);
 	}
+		
+	currentMovementTime += deltaTime;
+	mOrb.transform.position = Lerp(enemyStartPos, enemyTargetPos, Clamp(currentMovementTime / (Magnitude(enemyTargetPos - enemyStartPos) / enemySpeed), 0.0f, 1.0f));
+
+	if (MagnitudeSqr(mOrb.transform.position - enemyTargetPos) < 0.5f)
+	{
+		currentMovementTime = 0.0f;
+		float randX = rand() % 30;
+		float randZ = rand() % 30;
+		Vector3 targetPos = { randX - 15, 1.0f, randZ - 15 };
+		while (MagnitudeSqr(mOrb.transform.position - targetPos) < 0.5f)
+		{
+			targetPos.x = (rand() % 30) - 15.0f;
+			targetPos.z = (rand() % 30) - 15.0f;
+		}
+		enemyTargetPos = targetPos;
+		enemyStartPos = mOrb.transform.position;
+
+		UpdateEnemyVisual();
+	}
 
 	if (MagnitudeSqr(mOrb.transform.position - mBodyParts[0].segment.transform.position) < (mOrbRadius + mBodyParts[0].range) * (mOrbRadius + mBodyParts[0].range))
 	{
+		mParticleSystem.SetPosition(mOrb.transform.position);
+		mParticleSystem.SpawnParticles();
 		float randX = rand() % 30;
 		float randZ = rand() % 30;
-		mOrb.transform.position = { randX - 15, 1.0f, randZ - 15 };
+		Vector3 targetPos = { randX - 15, 1.0f, randZ - 15 };
+		while (MagnitudeSqr(targetPos - mBodyParts[0].segment.transform.position) < (mOrbRadius + mBodyParts[0].range) * (mOrbRadius + mBodyParts[0].range))
+		{
+			targetPos.x = (rand() % 30) - 15.0f;
+			targetPos.z = (rand() % 30) - 15.0f;
+		}
+		mOrb.transform.position = targetPos;
+		enemyStartPos = targetPos;
 		++activeSegments;
 		UpdateActiveSegments();
+		enemySpeed += 1;
+		UpdateEnemyVisual();
 	}
+	mEnemy.transform = mOrb.transform;
+
+	mParticleSystem.Update(deltaTime);
+	mEnemyAnimator.Update(deltaTime);
 }
 
 void GameState::Render()
@@ -173,9 +250,14 @@ void GameState::Render()
 				mStandardEffect.Render(part.segment);
 			}
 		}
-		mStandardEffect.Render(mOrb);
+		//mStandardEffect.Render(mOrb);
 		mStandardEffect.Render(mGround);
+		mStandardEffect.Render(mEnemy);
 	mStandardEffect.End();
+
+	mParticleSystemEffect.Begin();
+		mParticleSystem.Render(mParticleSystemEffect);
+	mParticleSystemEffect.End();
 }
 
 void GameState::DebugUI()
@@ -215,5 +297,22 @@ void GameState::UpdateActiveSegments()
 			mBodyParts[i].isActive = false;
 		}
 	}
+}
+
+void GameState::UpdateEnemyVisual()
+{
+	Vector3 l = Normalize(enemyStartPos - enemyTargetPos);
+	Vector3 r = Normalize(Math::Cross(Math::Vector3::YAxis, l));
+	Vector3 u = Normalize(Math::Cross(l, r));
+
+	Matrix4 rotationMatrix =
+	{
+		r.x, r.y, r.z, 0.0f,
+		u.x, u.y, u.z, 0.0f,
+		l.x, l.y, l.z, 0.0f,
+		0.0f,0.0f,0.0f,1.0f
+	};
+	Quaternion rotation = Quaternion::CreateFromRotationMatrix(rotationMatrix);
+	mOrb.transform.rotation = rotation;
 }
 
