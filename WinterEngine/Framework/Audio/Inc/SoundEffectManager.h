@@ -25,6 +25,8 @@ namespace WinterEngine::Audio
 		
 		void Play(SoundId id, bool loop = false);
 		void Stop(SoundId id);
+		void Pause(SoundId id);
+		void Resume(SoundId id);
 
 	private:
 		struct Entry

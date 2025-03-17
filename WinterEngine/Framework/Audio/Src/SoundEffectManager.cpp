@@ -96,3 +96,21 @@ void SoundEffectManager::Stop(SoundId id)
 		iter->second->instance->Stop();
 	}
 }
+
+void SoundEffectManager::Pause(SoundId id)
+{
+	auto iter = mSoundEffects.find(id);
+	if (iter != mSoundEffects.end())
+	{
+		iter->second->instance->Pause();
+	}
+}
+
+void SoundEffectManager::Resume(SoundId id)
+{
+	auto iter = mSoundEffects.find(id);
+	if (iter != mSoundEffects.end())
+	{
+		iter->second->instance->Resume();
+	}
+}

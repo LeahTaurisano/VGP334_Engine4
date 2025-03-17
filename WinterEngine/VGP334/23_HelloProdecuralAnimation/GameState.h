@@ -14,7 +14,11 @@ public:
 protected:
 
 	void UpdateActiveSegments();
-	void UpdateEnemyVisual();
+	void UpdateEnemyRotation();
+	void NextTauntEvent();
+	void CameraToSnakeEvent();
+	void CameraToEnemyEvent();
+	void CameraToActionShot();
 
 	//Camera
 	WinterEngine::Graphics::Camera mCamera;
@@ -22,6 +26,15 @@ protected:
 	//Lighting
 	WinterEngine::Graphics::DirectionalLight mDirectionalLight;
 	WinterEngine::Graphics::StandardEffect mStandardEffect;
+
+	//Scene State
+	enum class SceneState
+	{
+		Gameplay,
+		Animation
+	};
+	SceneState mCurrentSceneState = SceneState::Gameplay;
+	float sceneTimer = 0.0f;
 
 	//Ground
 	WinterEngine::Graphics::RenderObject mGround;
@@ -37,6 +50,10 @@ protected:
 	Vector3 enemyTargetPos = Vector3::Zero;
 	float enemySpeed = 5.0f;
 	float currentMovementTime = 0.0f;
+
+	//Final Enemy
+	WinterEngine::Graphics::RenderGroup mFinalEnemy;
+	WinterEngine::Graphics::Animator mFinalEnemyAnimator;
 
 	//Snake
 	uint32_t numSegments = 0;
@@ -54,4 +71,16 @@ protected:
 	//Particles
 	WinterEngine::Graphics::ParticleSystemEffect mParticleSystemEffect;
 	WinterEngine::Physics::ParticleSystem mParticleSystem;
+
+	//AnimationFrames
+	float mEnemyAnimationTime = 0.0f;
+	WinterEngine::Graphics::Animation mFinalEnemyAnimation;
+	int enemyTauntNumber = 2;
+	float mSnakeAnimationTime = 0.0f;
+	WinterEngine::Graphics::Animation mSnakeAnimation;
+
+	//Sound
+	WinterEngine::Audio::SoundId mChompSoundId = 0;
+	WinterEngine::Audio::SoundId mBennyHillId = 0;
+	WinterEngine::Audio::SoundId mOneWingedId = 0;
 };
