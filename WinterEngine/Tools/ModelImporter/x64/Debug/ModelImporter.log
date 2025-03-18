@@ -1,39 +1,39 @@
 ﻿  main.cpp
-D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(38,50): warning C4305: 'initializing': truncation from 'double' to 'btScalar'
   (compiling source file 'main.cpp')
   
-D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1232,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1357,21): warning C4244: '+=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1361,21): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1385,20): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1387,23): warning C4244: '=': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
   
-D:\VGP242\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(14,50): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(14,51): warning C4305: 'argument': truncation from 'double' to 'float'
   (compiling source file 'main.cpp')
   
-D:\VGP242\WinterEngine\Tools\ModelImporter\main.cpp(84,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\VGP242\WinterEngine\Tools\ModelImporter\main.cpp(140,4): warning C4018: '<': signed/unsigned mismatch
-D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Tools\ModelImporter\main.cpp(84,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Tools\ModelImporter\main.cpp(140,4): warning C4018: '<': signed/unsigned mismatch
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
   (compiling source file 'main.cpp')
-      D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
-      the template instantiation context (the oldest one first) is
-          D:\VGP242\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
-          see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
+  C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1269,17):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\Bullet\BulletSoftBody\btSoftBody.h(1303,4):
+  	see reference to function template instantiation 'void btSoftBody::updateFace<btDbvtNode>(DBVTNODE *,bool,bool)' being compiled
           with
           [
               DBVTNODE=btDbvtNode
           ]
   
-  ModelImporter.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\ModelImporter.exe
-  D:\VGP242\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
-  D:\VGP242\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
+  ModelImporter.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\ModelImporter.exe
+  C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mt.dll
+  C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\External\assimp-5.2.5\bin\assimp-vc143-mtd.dll
           2 file(s) copied.

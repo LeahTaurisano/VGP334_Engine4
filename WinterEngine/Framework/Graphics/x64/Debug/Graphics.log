@@ -1,1 +1,23 @@
-﻿  Graphics.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\Graphics.lib
+﻿  ModelIO.cpp
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(11,17): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/ModelIO.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(17,38): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/ModelIO.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(23,35): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/ModelIO.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(251,21): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/ModelIO.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(261,23): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/ModelIO.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(354,25): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/ModelIO.cpp')
+  
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(363,26): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+  (compiling source file '/Src/ModelIO.cpp')
+  
+  Graphics.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\Graphics.lib

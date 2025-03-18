@@ -19,6 +19,8 @@ protected:
 	void CameraToSnakeEvent();
 	void CameraToEnemyEvent();
 	void CameraToActionShot();
+	void TransitionToEndEvent();
+	void FlipPauseBossMusic();
 
 	//Camera
 	WinterEngine::Graphics::Camera mCamera;
@@ -31,16 +33,19 @@ protected:
 	enum class SceneState
 	{
 		Gameplay,
-		Animation
+		Animation,
+		End
 	};
 	SceneState mCurrentSceneState = SceneState::Gameplay;
 	float sceneTimer = 0.0f;
+	float snakeGameDuration = 20.0f;
+	bool snakeVictory = false;
 
 	//Ground
 	WinterEngine::Graphics::RenderObject mGround;
 	WinterEngine::Physics::RigidBody mGroundRB;
 	WinterEngine::Physics::CollisionShape mGroundShape;
-	
+
 	//Enemy
 	WinterEngine::Graphics::RenderGroup mEnemy;
 	WinterEngine::Graphics::RenderObject mOrb;
@@ -83,4 +88,5 @@ protected:
 	WinterEngine::Audio::SoundId mChompSoundId = 0;
 	WinterEngine::Audio::SoundId mBennyHillId = 0;
 	WinterEngine::Audio::SoundId mOneWingedId = 0;
+	bool bossMusicPaused = false; //this is just to make a quick way to flip this
 };

@@ -62,6 +62,8 @@ void GameState::Initialize()
 	ModelCache::Get()->AddAnimation(mFinalEnemy.modelId, L"../../Assets/Models/Character04/GolfPrePutt.model");
 	ModelCache::Get()->AddAnimation(mFinalEnemy.modelId, L"../../Assets/Models/Character04/GolfDrive.model");
 	ModelCache::Get()->AddAnimation(mFinalEnemy.modelId, L"../../Assets/Models/Character04/Run.model");
+	ModelCache::Get()->AddAnimation(mFinalEnemy.modelId, L"../../Assets/Models/Character04/Victory.model"); //9
+	ModelCache::Get()->AddAnimation(mFinalEnemy.modelId, L"../../Assets/Models/Character04/Floating.model"); //10
 	mFinalEnemyAnimator.Initialize(mFinalEnemy.modelId);
 	mFinalEnemy.transform.position = { -10.0f, 0.0f, 0.0f };
 	mFinalEnemy.transform.rotation = Quaternion::CreateFromAxisAngle(Vector3::YAxis, 270.0f * Constants::DegToRad);
@@ -72,28 +74,44 @@ void GameState::Initialize()
 		.AddPositionKey({ -10.0f, 0.0f, 0.0f }, 0.0f)
 		.AddPositionKey({ -5.0f, 0.0f, 0.0f }, 3.0f)
 		.AddEventKey(std::bind(&GameState::CameraToSnakeEvent, this), 3.0f)
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 3.0f) //pause
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 6.0f) //play
 		.AddEventKey(std::bind(&GameState::CameraToEnemyEvent, this), 6.0f)
 		.AddEventKey(std::bind(&GameState::NextTauntEvent, this), 6.0f) //Situps
 		.AddEventKey(std::bind(&GameState::CameraToSnakeEvent, this), 10.0f)
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 10.0f) //pause
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 13.0f) //play
 		.AddEventKey(std::bind(&GameState::CameraToEnemyEvent, this), 13.0f)
 		.AddEventKey(std::bind(&GameState::NextTauntEvent, this), 13.0f) //Taunt
 		.AddEventKey(std::bind(&GameState::CameraToSnakeEvent, this), 17.0f)
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 17.0f) //pause
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 20.0f) //play
 		.AddEventKey(std::bind(&GameState::CameraToEnemyEvent, this), 20.0f)
 		.AddEventKey(std::bind(&GameState::NextTauntEvent, this), 20.0f) //Taunt Gesture
 		.AddEventKey(std::bind(&GameState::CameraToSnakeEvent, this), 22.0f)
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 22.0f) //pause
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 25.0f) //play
 		.AddEventKey(std::bind(&GameState::CameraToEnemyEvent, this), 25.0f)
 		.AddEventKey(std::bind(&GameState::NextTauntEvent, this), 25.0f) //Drop Kick
 		.AddEventKey(std::bind(&GameState::CameraToSnakeEvent, this), 27.5f)
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 27.0f) //pause
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 31.0f) //play
 		.AddEventKey(std::bind(&GameState::CameraToEnemyEvent, this), 31.0f)
 		.AddEventKey(std::bind(&GameState::NextTauntEvent, this), 31.0f) //Golf Pre Putt
 		.AddEventKey(std::bind(&GameState::CameraToSnakeEvent, this), 41.0f)
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 41.0f) //pause
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 44.0f) //play
 		.AddEventKey(std::bind(&GameState::CameraToEnemyEvent, this), 44.0f)
 		.AddEventKey(std::bind(&GameState::NextTauntEvent, this), 44.0f) //Golf Drive
 		.AddEventKey(std::bind(&GameState::CameraToSnakeEvent, this), 47.0f)
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 47.0f) //pause
+		.AddEventKey(std::bind(&GameState::FlipPauseBossMusic, this), 50.0f) //play
 		.AddEventKey(std::bind(&GameState::CameraToActionShot, this), 50.0f)
 		.AddPositionKey({ -5.0f, 0.0f, 0.0f }, 50.0f)
 		.AddEventKey(std::bind(&GameState::NextTauntEvent, this), 50.0f) //Run
-		.AddPositionKey({ 0.0f, 0.0f, 0.0f }, 52.0f)
+		.AddPositionKey({ -0.2f, 0.0f, 0.0f }, 52.0f)
+		.AddEventKey(std::bind(&GameState::TransitionToEndEvent, this), 52.0f)
+		.AddPositionKey({ -20.0f, 10.0f, 0.0f }, 54.0f)
 		.Build();
 
 	//Snake
@@ -120,7 +138,8 @@ void GameState::Initialize()
 	mSnakeAnimation = AnimationBuilder()
 		.AddPositionKey({ 5.0f, 1.0f, 0.0f }, 0.0f)
 		.AddPositionKey({ 5.0f, 1.0f, 0.0f }, 50.0f)
-		.AddPositionKey({ 0.0f, 1.0f, 0.0f }, 52.0f)
+		.AddPositionKey({ 0.2f, 1.0f, 0.0f }, 52.0f)
+		.AddPositionKey({ 20.0f, 10.0f, 0.0f }, 54.0f)
 		.Build();
 
 	//Particles
@@ -146,9 +165,11 @@ void GameState::Initialize()
 	mParticleSystem.Initialize(particleInfo);
 
 	//Sound
-	//mChompSoundId = SoundEffectManager::Get()->Load("cartoonchompsoundeffect.wav");
-	//mBennyHillId = SoundEffectManager::Get()->Load("benny-hill-theme.wav");
-	//mOneWingedId = SoundEffectManager::Get()->Load("one-winged-angel.wav");
+	mChompSoundId = SoundEffectManager::Get()->Load("CartoonChompSoundEffect.wav");
+	mBennyHillId = SoundEffectManager::Get()->Load("BennyHillTheme.wav");
+	mOneWingedId = SoundEffectManager::Get()->Load("OneWingedAngel.wav");
+	SoundEffectManager::Get()->Play(mBennyHillId);
+
 }
 void GameState::Terminate()
 {
@@ -208,13 +229,15 @@ void GameState::Update(float deltaTime)
 	sceneTimer += deltaTime;
 	if (mCurrentSceneState == SceneState::Gameplay)
 	{
-		if (sceneTimer > 5) //Scene Transition to Animation Portion
+		if (sceneTimer > snakeGameDuration) //Scene Transition to Animation Portion
 		{
 			mBodyAnchorRB.SetVelocity(Vector3::Zero);
 			mBodyAnchorRB.SetPosition({ 5.0f, 1.0f, 0.0f });
 			mCurrentSceneState = SceneState::Animation;
 			mFinalEnemyAnimator.PlayAnimation(1, true);
 			mCamera.SetPosition({ 0.0f, 1.0f, -2.0f });
+			SoundEffectManager::Get()->Stop(mBennyHillId);
+			SoundEffectManager::Get()->Play(mOneWingedId);
 		}
 		const float speed = 10.0f;
 		Vector3 velocity = Vector3::Zero;                                                 
@@ -275,7 +298,7 @@ void GameState::Update(float deltaTime)
 			mOrb.transform.position = targetPos;
 			enemyStartPos = targetPos;
 			++activeSegments;
-			//SoundEffectManager::Get()->Play(mChompSoundId);
+			SoundEffectManager::Get()->Play(mChompSoundId);
 			UpdateActiveSegments();
 			enemySpeed += 1;
 			UpdateEnemyRotation();
@@ -285,7 +308,7 @@ void GameState::Update(float deltaTime)
 		mParticleSystem.Update(deltaTime);
 		mEnemyAnimator.Update(deltaTime);
 	}
-	else
+	else if (mCurrentSceneState == SceneState::Animation)
 	{
 		if (mFinalEnemyAnimation.GetDuration() > 0.0f)
 		{
@@ -297,6 +320,24 @@ void GameState::Update(float deltaTime)
 		mFinalEnemyAnimator.Update(deltaTime);
 
 		if (mSnakeAnimation.GetDuration() > 0.0f)
+		{
+			float prevTime = mSnakeAnimationTime;
+			mSnakeAnimationTime += deltaTime;
+			mBodyAnchorRB.SetPosition(mSnakeAnimation.GetTransform(mSnakeAnimationTime).position);
+		}
+	}
+	else
+	{
+		if (mFinalEnemyAnimation.GetDuration() > 0.0f && snakeVictory)
+		{
+			float prevTime = mEnemyAnimationTime;
+			mEnemyAnimationTime += deltaTime;
+			mFinalEnemyAnimation.PlayEvents(prevTime, mEnemyAnimationTime);
+			mFinalEnemy.transform.position = mFinalEnemyAnimation.GetTransform(mEnemyAnimationTime).position;
+		}
+		mFinalEnemyAnimator.Update(deltaTime);
+
+		if (mSnakeAnimation.GetDuration() > 0.0f && !snakeVictory)
 		{
 			float prevTime = mSnakeAnimationTime;
 			mSnakeAnimationTime += deltaTime;
@@ -430,5 +471,32 @@ void GameState::CameraToActionShot()
 {
 	mCamera.SetPosition({ 0.0f, 1.0f, -8.0f });
 	mCamera.SetLookAt({ 0.0f, 1.0f, 0.0f });
+}
+
+void GameState::TransitionToEndEvent()
+{
+	mCurrentSceneState = SceneState::End;
+	snakeVictory = activeSegments > 14;
+	if (snakeVictory)
+	{
+		mFinalEnemyAnimator.PlayAnimation(10, true);
+	}
+	else
+	{
+		mFinalEnemyAnimator.PlayAnimation(9, true);
+	}
+}
+
+void GameState::FlipPauseBossMusic()
+{
+	if (bossMusicPaused)
+	{
+		SoundEffectManager::Get()->Resume(mOneWingedId);
+	}
+	else
+	{
+		SoundEffectManager::Get()->Pause(mOneWingedId);
+	}
+	bossMusicPaused = !bossMusicPaused;
 }
 
