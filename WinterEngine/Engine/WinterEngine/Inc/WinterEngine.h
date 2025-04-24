@@ -7,6 +7,20 @@
 #include "Event.h"
 #include "EventManager.h"
 
+//Game Object
+#include "GameObject.h"
+#include "TypeIds.h"
+
+//Components
+#include "Component.h"
+#include "TransformComponent.h"
+#include "CameraComponent.h"
+#include "FPSCameraComponent.h"
+
+//Services
+#include "Service.h"
+#include "GameWorld.h"
+
 namespace WinterEngine
 {
 	App& MainApp();
