@@ -8,6 +8,7 @@ namespace WinterEngine
 		Transform,  // transform component for location data
 		Camera,     // contains the camera for viewing
 		FPSCamera,  // move the Camera with FPS controls
+		Mesh,		// adds a mesh shape to the game object
 		Count		// last value, chain ids in custom components
 	};
 
@@ -15,6 +16,7 @@ namespace WinterEngine
 	{
 		Invalid,    // default value, not valid
 		Camera,     // manages the cameras in the world
+		Render,		// renders renderobjects to the world
 		Count       // last value, chain ids in custom services
 	};
 }

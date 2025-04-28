@@ -1,9 +1,12 @@
 #pragma once
 
 #include "Component.h"
+#include "GameObjectHandle.h"
 
 namespace WinterEngine
 {
+	class GameWorld;
+
 	class GameObject final
 	{
 	public:
@@ -17,6 +20,10 @@ namespace WinterEngine
 		void SetName(std::string& name);
 		const std::string& GetName() const;
 		uint32_t GetUniqueId() const;
+		
+		GameWorld& GetWorld();
+		const GameWorld& GetWorld() const;
+		const GameObjectHandle& GetHandle() const;
 
 		template<class ComponentType>
 		ComponentType* AddComponent()
@@ -72,9 +79,13 @@ namespace WinterEngine
 		}
 
 	private:
+		friend class GameWorld;
+
 		std::string mName = "EMPTY";
 		bool mInitialized = false;
 		uint32_t mUniqueId = 0;
+		GameWorld* mWorld = nullptr;
+		GameObjectHandle mHandle;
 
 		using Components = std::vector<std::unique_ptr<Component>>;
 		Components mComponents;
