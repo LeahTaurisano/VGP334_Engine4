@@ -48,6 +48,8 @@ namespace WinterEngine
 			return const_cast<ServiceType*>(thisConst->GetService<ServiceType>());
 		}
 
+		void LoadLevel(const std::filesystem::path& levelFile);
+
 	private:
 		bool IsValid(const GameObjectHandle& handle);
 		void ProcessDestroyList();
@@ -66,6 +68,7 @@ namespace WinterEngine
 		using Services = std::vector<std::unique_ptr<Service>>;
 		Services mServices;
 
+		std::filesystem::path mLevelFileName;
 		bool mInitialized = false;
 	};
 }

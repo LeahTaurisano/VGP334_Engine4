@@ -1,4 +1,5 @@
 ﻿  Precompile.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(639,5): warning MSB8015: All source files are not up-to-date:  forcing a rebuild of all source files due to the contents of 'C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\x64\Debug\Graphics.tlog\CL.command.1.tlog' being invalid.
   Animation.cpp
   AnimationBuilder.cpp
   AnimationUtil.cpp
@@ -9,98 +10,98 @@
   DebugUI.cpp
   GaussianBlurEffect.cpp
   GraphicsSystem.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\GaussianBlurEffect.cpp(73,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\GaussianBlurEffect.cpp(73,25): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '/Src/GaussianBlurEffect.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\GraphicsSystem.cpp(123,109): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\GraphicsSystem.cpp(123,109): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
   (compiling source file '/Src/GraphicsSystem.cpp')
   
   MeshBuffer.cpp
   MeshBuilder.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(80,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(80,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(115,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(115,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(211,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(211,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(236,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(236,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(296,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(296,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(387,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(387,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(413,23): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(413,23): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(437,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(437,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(469,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(469,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(506,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(506,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(546,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\MeshBuilder.cpp(546,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   (compiling source file '/Src/MeshBuilder.cpp')
   
   ModelCache.cpp
   ModelIO.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(11,17): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(11,17): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/ModelIO.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(17,38): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(17,38): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/ModelIO.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(23,35): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(23,35): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/ModelIO.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(251,21): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(251,21): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/ModelIO.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(261,23): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(261,23): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/ModelIO.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(354,25): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(354,25): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/ModelIO.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(363,26): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\ModelIO.cpp(363,26): warning C4267: 'initializing': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/ModelIO.cpp')
   
   ParticleSystemEffect.cpp
   PixelShader.cpp
   PortalEffect.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\PortalEffect.cpp(158,14): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\PortalEffect.cpp(158,14): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
   (compiling source file '/Src/PortalEffect.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\PortalEffect.cpp(159,15): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\PortalEffect.cpp(159,15): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
   (compiling source file '/Src/PortalEffect.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\PortalEffect.cpp(184,89): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\PortalEffect.cpp(184,89): warning C4267: 'argument': conversion from 'size_t' to 'uint32_t', possible loss of data
   (compiling source file '/Src/PortalEffect.cpp')
   
   PostProcessingEffect.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(76,51): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(76,51): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
   (compiling source file '/Src/PostProcessingEffect.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(76,27): warning C4244: 'initializing': conversion from 'uint32_t' to 'const float', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(76,27): warning C4244: 'initializing': conversion from 'uint32_t' to 'const float', possible loss of data
   (compiling source file '/Src/PostProcessingEffect.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(77,53): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(77,53): warning C4244: 'initializing': conversion from 'uint32_t' to 'float', possible loss of data
   (compiling source file '/Src/PostProcessingEffect.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(77,28): warning C4244: 'initializing': conversion from 'uint32_t' to 'const float', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\PostProcessingEffect.cpp(77,28): warning C4244: 'initializing': conversion from 'uint32_t' to 'const float', possible loss of data
   (compiling source file '/Src/PostProcessingEffect.cpp')
   
   RenderObject.cpp
   RenderTarget.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\RenderTarget.cpp(82,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\RenderTarget.cpp(82,77): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
   (compiling source file '/Src/RenderTarget.cpp')
   
   Generating Code...
@@ -110,10 +111,10 @@ D:\VGP242\WinterEngine\Framework\Graphics\Src\RenderTarget.cpp(82,77): warning C
   SimpleDraw.cpp
   StandardEffect.cpp
   Terrain.cpp
-D:\VGP242\WinterEngine\Framework\Graphics\Src\Terrain.cpp(69,30): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\Terrain.cpp(69,30): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file '/Src/Terrain.cpp')
   
-D:\VGP242\WinterEngine\Framework\Graphics\Src\Terrain.cpp(69,51): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\Terrain.cpp(69,51): warning C4018: '>=': signed/unsigned mismatch
   (compiling source file '/Src/Terrain.cpp')
   
   TerrainEffect.cpp
@@ -121,4 +122,4 @@ D:\VGP242\WinterEngine\Framework\Graphics\Src\Terrain.cpp(69,51): warning C4018:
   TextureCache.cpp
   VertexShader.cpp
   Generating Code...
-  Graphics.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\Graphics.lib
+  Graphics.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\Graphics.lib

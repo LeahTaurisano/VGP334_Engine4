@@ -1,13 +1,2 @@
-﻿  CameraComponent.cpp
-  CameraService.cpp
-  FPSCameraComponent.cpp
-  GameObject.cpp
-  GameObjectFactory.cpp
-  GameWorld.cpp
-  MeshComponent.cpp
-  RenderObjectComponent.cpp
-  RenderService.cpp
-  TransformComponent.cpp
-  WinterEngine.cpp
-  Generating Code...
-  WinterEngine.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\WinterEngine.lib
+﻿  RigidBodyComponent.cpp
+  WinterEngine.vcxproj -> C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\x64\Debug\WinterEngine.lib
