@@ -1,5 +1,4 @@
 ﻿  Precompile.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(639,5): warning MSB8015: All source files are not up-to-date:  forcing a rebuild of all source files due to the contents of 'C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\x64\Debug\Graphics.tlog\CL.command.1.tlog' being invalid.
   Animation.cpp
   AnimationBuilder.cpp
   AnimationUtil.cpp
@@ -9,10 +8,10 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v17
   ConstantBuffer.cpp
   DebugUI.cpp
   GaussianBlurEffect.cpp
-  GraphicsSystem.cpp
 C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\GaussianBlurEffect.cpp(73,25): warning C4018: '<': signed/unsigned mismatch
   (compiling source file '/Src/GaussianBlurEffect.cpp')
   
+  GraphicsSystem.cpp
 C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Graphics\Src\GraphicsSystem.cpp(123,109): warning C4244: 'argument': conversion from 'float' to 'UINT8', possible loss of data
   (compiling source file '/Src/GraphicsSystem.cpp')
   

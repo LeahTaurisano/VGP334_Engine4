@@ -12,11 +12,16 @@
 #include "ModelComponent.h"
 #include "AnimatorComponent.h"
 #include "RigidBodyComponent.h"
+#include "SoundEffectComponent.h"
+#include "SoundBankComponent.h"
 
 using namespace WinterEngine;
 
 namespace
 {
+	CustomComponentCB TryMake;
+	CustomComponentCB TryGet;
+	
 	Component* AddComponent(const std::string& componentName, GameObject& gameObject)
 	{
 		Component* newComponent = nullptr;
@@ -47,10 +52,19 @@ namespace
 		else if (componentName == "RigidBodyComponent")
 		{
 			newComponent = gameObject.AddComponent<RigidBodyComponent>();
+		}		
+		else if (componentName == "SoundEffectComponent")
+		{
+			newComponent = gameObject.AddComponent<SoundEffectComponent>();
+		}		
+		else if (componentName == "SoundBankComponent")
+		{
+			newComponent = gameObject.AddComponent<SoundBankComponent>();
 		}
 		else
 		{
-			ASSERT(false, "GameObjectFactory: component [%s] is not valid", componentName.c_str());
+			newComponent = TryMake(componentName, gameObject);
+			ASSERT(newComponent != nullptr, "GameObjectFactory: component [%s] is not valid", componentName.c_str());
 		}
 
 		return newComponent;
@@ -87,13 +101,32 @@ namespace
 		{
 			component = gameObject.GetComponent<RigidBodyComponent>();
 		}
+		else if (componentName == "SoundEffectComponent")
+		{
+			component = gameObject.GetComponent<SoundEffectComponent>();
+		}
+		else if (componentName == "SoundBankComponent")
+		{
+			component = gameObject.GetComponent<SoundBankComponent>();
+		}
 		else
 		{
-			ASSERT(false, "GameObjectFactory: component [%s] is not valid", componentName.c_str());
+			component = TryGet(componentName, gameObject);
+			ASSERT(component != nullptr, "GameObjectFactory: component [%s] is not valid", componentName.c_str());
 		}
 
 		return component;
 	}
+}
+
+void GameObjectFactory::SetCustomMake(CustomComponentCB cb)
+{
+	TryMake = cb;
+}
+
+void GameObjectFactory::SetCustomGet(CustomComponentCB cb)
+{
+	TryGet = cb;
 }
 
 void GameObjectFactory::Make(const std::filesystem::path& templatePath, GameObject& gameObject, GameWorld& gameWorld)

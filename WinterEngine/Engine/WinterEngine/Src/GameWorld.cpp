@@ -8,6 +8,16 @@
 
 using namespace WinterEngine;
 
+namespace
+{
+	CustomService TryAddService;
+}
+
+void GameWorld::SetCustomService(CustomService customService)
+{
+	TryAddService = customService;
+}
+
 void GameWorld::Initialize(uint32_t capacity)
 {
 	ASSERT(!mInitialized, "GameWorld: is already initialized");
@@ -155,6 +165,7 @@ void GameWorld::LoadLevel(const std::filesystem::path& levelFile)
 		}
 		else
 		{
+			newService = TryAddService(serviceName, *this);
 			ASSERT(newService != nullptr, "GameWorld: invalid service name %s", serviceName.c_str());
 		}
 
