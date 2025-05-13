@@ -40,7 +40,7 @@ C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physi
   (compiling source file '/Src/App.cpp')
       C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Framework\Physics\Inc\PhysicsWorld.h(17,3):
       This diagnostic occurred in the compiler generated function 'WinterEngine::Physics::PhysicsWorld::Settings::Settings(void)'
-      C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Engine\WinterEngine\Src\App.cpp(45,25):
+      C:\Users\LCV2242924\Documents\GitHub\VGP334_Engine4\WinterEngine\Engine\WinterEngine\Src\App.cpp(46,25):
       see reference to function 'WinterEngine::Physics::PhysicsWorld::Settings::Settings(void)'
   
   CameraComponent.cpp
