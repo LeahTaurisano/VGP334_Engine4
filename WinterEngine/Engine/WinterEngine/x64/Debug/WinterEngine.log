@@ -1,27 +1,2 @@
-﻿  GameWorld.cpp
-D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(155,2): warning C4477: 'snprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 4 has type 'const std::filesystem::path'
-  (compiling source file '/Src/GameWorld.cpp')
-  
-D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(269,2): warning C4477: 'snprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 4 has type 'const std::filesystem::path::value_type *'
-  (compiling source file '/Src/GameWorld.cpp')
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(269,2):
-      consider using '%ls' in the format string
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(269,2):
-      consider using '%lls' in the format string
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(269,2):
-      consider using '%Ls' in the format string
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(269,2):
-      consider using '%ws' in the format string
-  
-D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(282,2): warning C4477: 'snprintf' : format string '%s' requires an argument of type 'char *', but variadic argument 4 has type 'const std::filesystem::path::value_type *'
-  (compiling source file '/Src/GameWorld.cpp')
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(282,2):
-      consider using '%ls' in the format string
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(282,2):
-      consider using '%lls' in the format string
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(282,2):
-      consider using '%Ls' in the format string
-      D:\VGP242\WinterEngine\Engine\WinterEngine\Src\GameWorld.cpp(282,2):
-      consider using '%ws' in the format string
-  
+﻿  GameObjectFactory.cpp
   WinterEngine.vcxproj -> D:\VGP242\WinterEngine\x64\Debug\WinterEngine.lib

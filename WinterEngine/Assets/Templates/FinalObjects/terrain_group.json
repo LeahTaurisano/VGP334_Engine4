@@ -1,0 +1,38 @@
+{
+  "Components": {
+    "TransformComponent": {
+      "Position": [ 0.0, 0.0, 0.0 ],
+      "Rotation": [ 0.0, 0.0, 0.0, 1.0 ],
+      "Scale": [ 1.0, 1.0, 1.0 ]
+    },
+    "CustomSideScrollingComponent": {
+      "ScrollSpeed": 1.0
+    }
+  },
+  "Children": {
+    "Block_1": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 2.0, 0.0, 0.0 ]
+        }
+      }
+    },
+    "Block_2": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 4.0, 0.0, 0.0 ]
+        }
+      }
+    },
+    "Block_3": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 6.0, 2.0, 0.0 ]
+        }
+      }
+    }
+  }
+}

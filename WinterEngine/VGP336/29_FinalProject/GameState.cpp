@@ -1,6 +1,8 @@
 #include "GameState.h"
 #include "CustomDebugDrawService.h"
 #include "CustomDebugDrawComponent.h"
+#include "CustomPlayerControllerComponent.h"
+#include "CustomSideScrollingComponent.h"
 
 using namespace WinterEngine;
 using namespace WinterEngine::Graphics;
@@ -23,6 +25,14 @@ Component* CustomComponentMake(const std::string& componentName, GameObject& gam
 	{
 		return gameObject.AddComponent<CustomDebugDrawComponent>();
 	}
+	if (componentName == "CustomPlayerControllerComponent")
+	{
+		return gameObject.AddComponent<CustomPlayerControllerComponent>();
+	}
+	if (componentName == "CustomSideScrollingComponent")
+	{
+		return gameObject.AddComponent<CustomSideScrollingComponent>();
+	}
 	return nullptr;
 }
 
@@ -32,6 +42,10 @@ Component* CustomComponentGet(const std::string& componentName, GameObject& game
 	{
 		return gameObject.GetComponent<CustomDebugDrawComponent>();
 	}
+	if (componentName == "CustomPlayerControllerComponent")
+	{
+		return gameObject.GetComponent<CustomPlayerControllerComponent>();
+	}
 	return nullptr;
 }
 
@@ -40,9 +54,9 @@ void GameState::Initialize()
 	// adds delegate callback to create a custom service
 	GameWorld::SetCustomService(CustomServiceMake);
 	GameObjectFactory::SetCustomMake(CustomComponentMake);
-	GameObjectFactory::SetCustomGet(CustomComponentGet);
+	GameObjectFactory::SetCustomMake(CustomComponentMake);
 
-	mGameWorld.LoadLevel(L"../../Assets/Templates/Levels/test_level.json");
+	mGameWorld.LoadLevel(L"../../Assets/Templates/Levels/final_level.json");
 }
 void GameState::Terminate()
 {
@@ -57,7 +71,7 @@ void GameState::Update(float deltaTime)
 void GameState::Render()
 {
 	mGameWorld.Render();
-	UIFont::Get()->DrawString(L"Hello World", Vector3::Zero, Colors::White);
+	UIFont::Get()->DrawString(L"Hello World", Vector2::Zero, Colors::White);
 }
 
 void GameState::DebugUI()

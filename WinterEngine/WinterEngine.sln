@@ -139,7 +139,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Levels", "Levels", "{C7C2EDBA-3B2D-471A-9D21-B6CBA1236FAC}"
 	ProjectSection(SolutionItems) = preProject
 		Assets\Templates\Levels\editor_level.json = Assets\Templates\Levels\editor_level.json
-		Assets\Templates\UI\test_button.json = Assets\Templates\UI\test_button.json
+		Assets\Templates\Levels\final_level.json = Assets\Templates\Levels\final_level.json
 		Assets\Templates\Levels\test_level.json = Assets\Templates\Levels\test_level.json
 	EndProjectSection
 EndProject
@@ -149,10 +149,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "29_FinalProject", "VGP336\2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{7C7258D3-C11A-48E3-A0FB-6284398D7750}"
 	ProjectSection(SolutionItems) = preProject
+		Assets\Templates\UI\test_button.json = Assets\Templates\UI\test_button.json
 		Assets\Templates\UI\test_screen.json = Assets\Templates\UI\test_screen.json
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "28_HelloEditor", "VGP336\28_HelloEditor\28_HelloEditor.vcxproj", "{14A56D38-293A-4546-BDD4-E7E9504D69E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinalObjects", "FinalObjects", "{8531CF9E-DA61-4EF7-BB4D-6CB9F9BDEE58}"
+	ProjectSection(SolutionItems) = preProject
+		Assets\Templates\FinalObjects\player_obj.json = Assets\Templates\FinalObjects\player_obj.json
+		Assets\Templates\FinalObjects\side_camera.json = Assets\Templates\FinalObjects\side_camera.json
+		Assets\Templates\FinalObjects\terrain_group.json = Assets\Templates\FinalObjects\terrain_group.json
+		Assets\Templates\FinalObjects\terrain_obj.json = Assets\Templates\FinalObjects\terrain_obj.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -550,6 +559,7 @@ Global
 		{073DC82A-5FB6-4BFD-8FCC-B4252970B1B6} = {EC0597F5-3D40-469E-88F5-4AF262E3478F}
 		{7C7258D3-C11A-48E3-A0FB-6284398D7750} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{14A56D38-293A-4546-BDD4-E7E9504D69E6} = {EC0597F5-3D40-469E-88F5-4AF262E3478F}
+		{8531CF9E-DA61-4EF7-BB4D-6CB9F9BDEE58} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6F24B03-457C-4C19-B6A6-A4AF04583A64}

@@ -1,0 +1,28 @@
+{
+  "Components": {
+    "TransformComponent": {
+      "Position": [ 0.0, 0.0, 0.0 ],
+      "Rotation": [ 0.0, 0.0, 0.0, 1.0 ],
+      "Scale": [ 1.0, 1.0, 1.0 ]
+    },
+    "MeshComponent": {
+      "Shape": {
+        "Type": "Cube",
+        "Size": 2
+      },
+      "Material": {
+
+      },
+      "Textures": {
+        "DiffuseMap": "../../Assets/Images/mountain/mountain_texture.jpg"
+      }
+    },
+    "RigidBodyComponent": {
+      "Mass": 0.0,
+      "ColliderData": {
+        "Shape": "Box",
+        "HalfExtents": [ 0.25, 1.0, 1.0 ]
+      }
+    }
+  }
+}

@@ -3,10 +3,13 @@
 
 enum class CustomComponentId
 {
-	CustomDebugDraw = static_cast<uint32_t>(WinterEngine::ComponentId::Count)
+	CustomDebugDraw = static_cast<uint32_t>(WinterEngine::ComponentId::Count),
+	CustomPlayerController,
+	CustomSideScrollingComponent
 };
 
 enum class CustomServiceId
 {
-	CustomDebugDrawDisplay = static_cast<uint32_t>(WinterEngine::ServiceId::Count)
+	CustomDebugDrawDisplay = static_cast<uint32_t>(WinterEngine::ServiceId::Count),
+	CustomProjectileSpawnerService
 };
