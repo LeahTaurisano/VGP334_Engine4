@@ -1,0 +1,33 @@
+{
+  "Components": {
+    "TransformComponent": {
+      "Position": [ 0.0, -10.0, -10.0 ],
+      "Rotation": [ 0.0, 0.0, 0.0, 1.0 ],
+      "Scale": [ 1.0, 1.0, 1.0 ]
+    },
+    "MeshComponent": {
+      "Shape": {
+        "Type": "Sphere",
+        "Slices": 10,
+        "Rings": 10,
+        "Radius": 0.25
+      },
+      "Material": {
+
+      },
+      "Textures": {
+        "DiffuseMap": "../../Assets/Images/planets/sun.jpg"
+      }
+    },
+    "RigidBodyComponent": {
+      "Mass": 0.0,
+      "ColliderData": {
+        "Shape": "Sphere",
+        "Radius": 0.25
+      }
+    },
+    "CustomProjectileComponent": {
+      "IsHazard": true
+    }
+  }
+}

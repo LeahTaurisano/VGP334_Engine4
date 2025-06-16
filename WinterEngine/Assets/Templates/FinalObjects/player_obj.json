@@ -23,7 +23,7 @@
       }
     },
     "CustomPlayerControllerComponent": {
-      "Speed": 1.0,
+      "Speed": 2.0,
       "JumpForce": 5.0
     }
   }

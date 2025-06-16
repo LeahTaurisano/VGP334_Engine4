@@ -2,17 +2,24 @@
 
 #include "CustomTypeIds.h"
 
-class CustomDebugDrawComponent;
+class CustomProjectileComponent;
 
-class CustomDebugDrawService : public WinterEngine::Service
+class CustomProjectileSpawnerService : public WinterEngine::Service
 {
 public:
 	SET_TYPE_ID(CustomServiceId::CustomProjectileSpawnerService);
 
+	void Register(CustomProjectileComponent* projectileComponent);
+	void Unregister(CustomProjectileComponent* projectileComponent);
 	void Update(float deltaTime) override;
 
 private:
-	using HazardProjectilePool = std::vector<CustomDebugDrawComponent*>;
-	using PointProjectilePool = std::vector<CustomDebugDrawComponent*>;
+	using ProjectilePool = std::vector<CustomProjectileComponent*>;
+	ProjectilePool mHazardProjectilePool;
+	ProjectilePool mPointProjectilePool;
 	float mTimer = 0.0f;
+	int mHazardNext = 0;
+	int mHazardReset = 1;
+	int mPointNext = 0;
+	int mPointReset = 1;
 };

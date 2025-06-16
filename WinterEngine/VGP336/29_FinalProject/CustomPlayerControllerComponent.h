@@ -13,6 +13,7 @@ public:
 	void Deserialize(const rapidjson::Value& value) override;
 
 private:
+	WinterEngine::TransformComponent* mTransformComponent = nullptr;
 	WinterEngine::RigidBodyComponent* mRBComponent = nullptr;
 	float mSpeed = 0.0f;
 	float mJumpForce = 0.0f;

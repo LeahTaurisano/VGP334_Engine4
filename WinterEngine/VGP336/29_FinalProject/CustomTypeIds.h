@@ -5,7 +5,8 @@ enum class CustomComponentId
 {
 	CustomDebugDraw = static_cast<uint32_t>(WinterEngine::ComponentId::Count),
 	CustomPlayerController,
-	CustomSideScrollingComponent
+	CustomSideScrollingComponent,
+	CustomProjectileComponent
 };
 
 enum class CustomServiceId

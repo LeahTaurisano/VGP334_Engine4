@@ -3,6 +3,8 @@
 #include "CustomDebugDrawComponent.h"
 #include "CustomPlayerControllerComponent.h"
 #include "CustomSideScrollingComponent.h"
+#include "CustomProjectileComponent.h"
+#include "CustomProjectileSpawnerService.h"
 
 using namespace WinterEngine;
 using namespace WinterEngine::Graphics;
@@ -15,6 +17,10 @@ Service* CustomServiceMake(const std::string& serviceName, GameWorld& gameWorld)
 	if (serviceName == "CustomDebugDrawService")
 	{
 		return gameWorld.AddService<CustomDebugDrawService>();
+	}
+	if (serviceName == "CustomProjectileSpawnerService")
+	{
+		return gameWorld.AddService<CustomProjectileSpawnerService>();
 	}
 	return nullptr;
 }
@@ -33,6 +39,10 @@ Component* CustomComponentMake(const std::string& componentName, GameObject& gam
 	{
 		return gameObject.AddComponent<CustomSideScrollingComponent>();
 	}
+	if (componentName == "CustomProjectileComponent")
+	{
+		return gameObject.AddComponent<CustomProjectileComponent>();
+	}
 	return nullptr;
 }
 
@@ -46,6 +56,10 @@ Component* CustomComponentGet(const std::string& componentName, GameObject& game
 	{
 		return gameObject.GetComponent<CustomPlayerControllerComponent>();
 	}
+	if (componentName == "CustomProjectileComponent")
+	{
+		return gameObject.GetComponent<CustomProjectileComponent>();
+	}
 	return nullptr;
 }
 
@@ -54,7 +68,7 @@ void GameState::Initialize()
 	// adds delegate callback to create a custom service
 	GameWorld::SetCustomService(CustomServiceMake);
 	GameObjectFactory::SetCustomMake(CustomComponentMake);
-	GameObjectFactory::SetCustomMake(CustomComponentMake);
+	GameObjectFactory::SetCustomGet(CustomComponentGet);
 
 	mGameWorld.LoadLevel(L"../../Assets/Templates/Levels/final_level.json");
 }

@@ -1,0 +1,91 @@
+{
+  "Components": {
+    "TransformComponent": {
+      "Position": [ 0.0, 0.0, 0.0 ],
+      "Rotation": [ 0.0, 0.0, 0.0, 1.0 ],
+      "Scale": [ 1.0, 1.0, 1.0 ]
+    }
+  },
+  "Children": {
+    "Proj_1": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_2": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_3": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_4": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_5": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_6": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_7": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_8": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_9": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    },
+    "Proj_10": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 0.0, -10.0, -10.0 ]
+        }
+      }
+    }
+  }
+}

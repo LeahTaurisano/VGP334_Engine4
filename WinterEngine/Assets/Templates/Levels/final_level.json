@@ -18,6 +18,9 @@
     },
     "UIRenderService": {
 
+    },
+    "CustomProjectileSpawnerService": {
+
     }
   },
   "GameObjects": {
@@ -32,6 +35,9 @@
     },
     "Ground": {
       "Template": "../../Assets/Templates/ground_obj.json"
+    },
+    "ProjectilePools": {
+      "Template": "../../Assets/Templates/FinalObjects/projectile_group.json"
     }
   }
 }

@@ -158,6 +158,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinalObjects", "FinalObjects", "{8531CF9E-DA61-4EF7-BB4D-6CB9F9BDEE58}"
 	ProjectSection(SolutionItems) = preProject
 		Assets\Templates\FinalObjects\player_obj.json = Assets\Templates\FinalObjects\player_obj.json
+		Assets\Templates\FinalObjects\projectile_group.json = Assets\Templates\FinalObjects\projectile_group.json
+		Assets\Templates\FinalObjects\projectile_obj.json = Assets\Templates\FinalObjects\projectile_obj.json
 		Assets\Templates\FinalObjects\side_camera.json = Assets\Templates\FinalObjects\side_camera.json
 		Assets\Templates\FinalObjects\terrain_group.json = Assets\Templates\FinalObjects\terrain_group.json
 		Assets\Templates\FinalObjects\terrain_obj.json = Assets\Templates\FinalObjects\terrain_obj.json

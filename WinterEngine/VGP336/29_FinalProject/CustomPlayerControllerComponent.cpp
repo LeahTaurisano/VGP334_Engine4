@@ -7,6 +7,7 @@ using namespace WinterEngine::Input;
 
 void CustomPlayerControllerComponent::Initialize()
 {
+	mTransformComponent = GetOwner().GetComponent<TransformComponent>();
 	mRBComponent = GetOwner().GetComponent<RigidBodyComponent>();
 }
 
@@ -21,13 +22,21 @@ void CustomPlayerControllerComponent::Update(float deltaTime)
 	
 	if (input->IsKeyDown(KeyCode::RIGHT))
 	{
-		mRBComponent->SetVelocity({ mSpeed, 0, 0 });
+		if (mTransformComponent->position.x > 5.0)
+		{
+			mRBComponent->SetPosition({ 4.9, mTransformComponent->position.y, mTransformComponent->position.z });
+		}
+		mRBComponent->SetPosition({ mTransformComponent->position.x + mSpeed * deltaTime, mTransformComponent->position.y, mTransformComponent->position.z });
 	}
 	else if (input->IsKeyDown(KeyCode::LEFT))
 	{
-		mRBComponent->SetVelocity({ -mSpeed, 0, 0 });
+		if (mTransformComponent->position.x < -5.0)
+		{
+			mRBComponent->SetPosition({ -4.9, mTransformComponent->position.y, mTransformComponent->position.z });
+		}
+		mRBComponent->SetPosition({ mTransformComponent->position.x - mSpeed * deltaTime, mTransformComponent->position.y, mTransformComponent->position.z });
 	}
-	else if (input->IsKeyPressed(KeyCode::UP))
+	if (input->IsKeyPressed(KeyCode::UP))
 	{
 		mRBComponent->SetVelocity({ 0, mJumpForce, 0 });
 	}
