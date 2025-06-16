@@ -29,8 +29,8 @@ void UISprite::SetPosition(const Math::Vector2& position)
 
 void UISprite::SetScale(const Math::Vector2& scale)
 {
-	mSize.x = scale.x;
-	mSize.y = scale.y;
+	mScale.x = scale.x;
+	mScale.y = scale.y;
 }
 
 void UISprite::SetRect(uint32_t top, uint32_t left, uint32_t right, uint32_t bottom)

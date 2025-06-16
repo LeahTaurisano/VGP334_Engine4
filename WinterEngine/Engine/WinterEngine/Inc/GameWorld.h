@@ -20,6 +20,11 @@ namespace WinterEngine
 		GameObject* CreateGameObject(std::string name, const std::filesystem::path& templatePath = "");
 		void DestroyGameObject(const GameObjectHandle& handle);
 
+		void LoadLevel(const std::filesystem::path& levelFile, bool isEditor = false);
+		bool IsInEditMode() const;
+		bool IsRequestEdit() const;
+		void EditTemplate(const std::filesystem::path& templatePath);
+
 		template<class ServiceType>
 		ServiceType* AddService()
 		{
@@ -51,11 +56,10 @@ namespace WinterEngine
 			return const_cast<ServiceType*>(thisConst->GetService<ServiceType>());
 		}
 
-		void LoadLevel(const std::filesystem::path& levelFile);
-
 	private:
 		bool IsValid(const GameObjectHandle& handle);
 		void ProcessDestroyList();
+		void SaveEditTemplate();
 
 		struct Slot
 		{
@@ -72,6 +76,8 @@ namespace WinterEngine
 		Services mServices;
 
 		std::filesystem::path mLevelFileName;
+		GameObject* mEditGameObject = nullptr;
 		bool mInitialized = false;
+		bool mIsEditor = false;
 	};
 }

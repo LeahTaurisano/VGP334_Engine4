@@ -25,6 +25,14 @@ namespace WinterEngine
 		const GameWorld& GetWorld() const;
 		const GameObjectHandle& GetHandle() const;
 
+		void AddChild(GameObject* child);
+		GameObject* GetChild(uint32_t index);
+		const GameObject* GetChild(uint32_t index) const;
+
+		void SetParent(GameObject* parent);
+		GameObject* GetParent();
+		const GameObject* GetParent() const;
+
 		template<class ComponentType>
 		ComponentType* AddComponent()
 		{
@@ -86,8 +94,13 @@ namespace WinterEngine
 		uint32_t mUniqueId = 0;
 		GameWorld* mWorld = nullptr;
 		GameObjectHandle mHandle;
+		std::filesystem::path mTemplatePath = "";
 
 		using Components = std::vector<std::unique_ptr<Component>>;
 		Components mComponents;
+
+		using Children = std::vector<GameObject*>;
+		Children mChildren;
+		GameObject* mParent = nullptr;
 	};
 }

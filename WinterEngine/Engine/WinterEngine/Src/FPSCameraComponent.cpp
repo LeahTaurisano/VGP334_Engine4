@@ -1,5 +1,6 @@
 #include "Precompile.h"
 #include "FPSCameraComponent.h"
+#include "SaveUtil.h"
 
 #include "CameraComponent.h"
 #include "GameObject.h"
@@ -61,16 +62,16 @@ void FPSCameraComponent::Update(float deltaTime)
 
 void FPSCameraComponent::Deserialize(const rapidjson::Value& value)
 {
-	if (value.HasMember("MoveSpeed"))
-	{
-		mMoveSpeed = value["MoveSpeed"].GetFloat();
-	}
-	if (value.HasMember("ShiftSpeed"))
-	{
-		mShiftSpeed = value["ShiftSpeed"].GetFloat();
-	}
-	if (value.HasMember("TurnSpeed"))
-	{
-		mTurnSpeed = value["TurnSpeed"].GetFloat();
-	}
+	SaveUtil::ReadFloat("MoveSpeed", mMoveSpeed, value);
+	SaveUtil::ReadFloat("ShiftSpeed", mShiftSpeed, value);
+	SaveUtil::ReadFloat("TurnSpeed", mTurnSpeed, value);
+}
+
+void FPSCameraComponent::Serialize(rapidjson::Document& doc, rapidjson::Value& value, const rapidjson::Value& original)
+{
+	rapidjson::Value componentValue(rapidjson::kObjectType);
+	SaveUtil::WriteFloat("MoveSpeed", mMoveSpeed, doc, componentValue);
+	SaveUtil::WriteFloat("ShiftSpeed", mShiftSpeed, doc, componentValue);
+	SaveUtil::WriteFloat("TurnSpeed", mTurnSpeed, doc, componentValue);
+	value.AddMember("FPSCameraComponent", componentValue, doc.GetAllocator());
 }

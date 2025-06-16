@@ -33,5 +33,15 @@
       "Rings": 30,
       "Radius": 1.0
     }
+  },
+  "Children": {
+    "Mesh_Test": {
+      "Template": "../../Assets/Templates/mesh_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 1.75, 2.0, 0.0 ]
+        }
+      }
+    }
   }
 }

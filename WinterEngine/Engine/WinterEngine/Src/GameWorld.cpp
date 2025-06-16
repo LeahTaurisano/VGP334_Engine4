@@ -5,12 +5,14 @@
 #include "CameraService.h"
 #include "RenderService.h"
 #include "PhysicsService.h"
+#include "UIRenderService.h"
 
 using namespace WinterEngine;
 
 namespace
 {
 	CustomService TryAddService;
+	std::filesystem::path sEditTemplateFile;
 }
 
 void GameWorld::SetCustomService(CustomService customService)
@@ -52,6 +54,7 @@ void GameWorld::Terminate()
 		service.reset();
 	}
 	mServices.clear();
+	mInitialized = false;
 }
 
 void GameWorld::Update(float deltaTime)
@@ -86,11 +89,22 @@ void GameWorld::DebugUI()
 		if (slot.gameObject != nullptr)
 		{
 			slot.gameObject->DebugUI();
+			if (ImGui::Button("Save"))
+			{
+				SaveEditTemplate();
+			}
 		}
 	}
 	for (auto& service : mServices)
 	{
 		service->DebugUI();
+	}
+	if (mIsEditor)
+	{
+		if (ImGui::Button("Save"))
+		{
+			SaveEditTemplate();
+		}
 	}
 }
 
@@ -112,6 +126,7 @@ GameObject* GameWorld::CreateGameObject(std::string name, const std::filesystem:
 	newGO->mWorld = this;
 	newGO->mHandle.mIndex = freeSlot;
 	newGO->mHandle.mGeneration = slot.generation;
+	newGO->mTemplatePath = templatePath;
 	if (!templatePath.empty())
 	{
 		GameObjectFactory::Make(templatePath, *newGO, *this);
@@ -131,7 +146,7 @@ void GameWorld::DestroyGameObject(const GameObjectHandle& handle)
 	mToBeDestroyed.push_back(handle.mIndex);
 }
 
-void GameWorld::LoadLevel(const std::filesystem::path& levelFile)
+void GameWorld::LoadLevel(const std::filesystem::path& levelFile, bool isEditor)
 {
 	mLevelFileName = levelFile;
 
@@ -163,6 +178,10 @@ void GameWorld::LoadLevel(const std::filesystem::path& levelFile)
 		{
 			newService = AddService<PhysicsService>();
 		}
+		else if (serviceName == "UIRenderService")
+		{
+			newService = AddService<UIRenderService>();
+		}
 		else
 		{
 			newService = TryAddService(serviceName, *this);
@@ -184,6 +203,30 @@ void GameWorld::LoadLevel(const std::filesystem::path& levelFile)
 		GameObjectFactory::OverrideDeserialize(gameObject.value, *obj);
 		obj->Initialize();
 	}
+
+	mEditGameObject = nullptr;
+	if (isEditor && !sEditTemplateFile.empty())
+	{
+		mEditGameObject = CreateGameObject("EditObject", sEditTemplateFile);
+		mEditGameObject->Initialize();
+	}
+	mIsEditor = isEditor;
+}
+
+bool GameWorld::IsInEditMode() const
+{
+	return mIsEditor;
+}
+
+bool GameWorld::IsRequestEdit() const
+{
+	return !sEditTemplateFile.empty();
+}
+
+void GameWorld::EditTemplate(const std::filesystem::path& templatePath)
+{
+	sEditTemplateFile = templatePath;
+	
 }
 
 bool GameWorld::IsValid(const GameObjectHandle& handle)
@@ -212,4 +255,33 @@ void GameWorld::ProcessDestroyList()
 		mFreeSlots.push_back(index);
 	}
 	mToBeDestroyed.clear();
+}
+
+void GameWorld::SaveEditTemplate()
+{
+	if (sEditTemplateFile.empty() || mEditGameObject == nullptr)
+	{
+		return;
+	}
+
+	FILE* file = nullptr;
+	auto err = fopen_s(&file, sEditTemplateFile.u8string().c_str(), "r");
+	ASSERT(err == 0 && file != nullptr, "GameWorld: failed to open save file %s", sEditTemplateFile.c_str());
+
+	char buffer[66536];
+	rapidjson::FileReadStream readStream(file, buffer, sizeof(buffer));
+	fclose(file);
+
+	rapidjson::Document originalDoc;
+	originalDoc.ParseStream(readStream);
+
+	rapidjson::Document writeDoc;
+	GameObjectFactory::SerializeGameObject(writeDoc, originalDoc, *mEditGameObject);
+
+	err = fopen_s(&file, sEditTemplateFile.u8string().c_str(), "w");
+	ASSERT(err == 0 && file != nullptr, "GameWorld: failed to open save file %s", sEditTemplateFile.c_str());
+	rapidjson::FileWriteStream writeStream(file, buffer, sizeof(buffer));
+	rapidjson::PrettyWriter<rapidjson::FileWriteStream> writer(writeStream);
+	writeDoc.Accept(writer);
+	fclose(file);
 }

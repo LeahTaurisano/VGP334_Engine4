@@ -1,0 +1,9 @@
+{
+  "Components": {
+    "UISpriteComponent": {
+      "Texture": "../../Assets/Images/sprites/cyan.jpg",
+      "Position": [ 500.0, 20.0 ],
+      "Pivot": "Top"
+    }
+  }
+}
