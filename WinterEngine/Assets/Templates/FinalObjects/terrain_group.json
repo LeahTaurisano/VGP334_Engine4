@@ -14,7 +14,7 @@
       "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
       "Components": {
         "TransformComponent": {
-          "Position": [ 2.0, 0.0, 0.0 ]
+          "Position": [ 2.0, 1.0, 0.0 ]
         }
       }
     },
@@ -22,7 +22,7 @@
       "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
       "Components": {
         "TransformComponent": {
-          "Position": [ 4.0, 0.0, 0.0 ]
+          "Position": [ 4.0, 1.0, 0.0 ]
         }
       }
     },
@@ -30,7 +30,87 @@
       "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
       "Components": {
         "TransformComponent": {
-          "Position": [ 6.0, 2.0, 0.0 ]
+          "Position": [ 6.0, 3.0, 0.0 ]
+        }
+      }
+    },
+    "Block_4": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ -4.0, 1.0, 0.0 ]
+        }
+      }
+    },
+    "Block_5": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ -4.0, 3.0, 0.0 ]
+        }
+      }
+    },
+    "Block_6": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 8.0, 1.0, 0.0 ]
+        }
+      }
+    },
+    "Block_7": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 11.0, 3.0, 0.0 ]
+        }
+      }
+    },
+    "Block_8": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 14.0, 1.0, 0.0 ]
+        }
+      }
+    },
+    "Block_9": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 14.0, 5.0, 0.0 ]
+        }
+      }
+    },
+    "Block_10": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 17.0, 5.0, 0.0 ]
+        }
+      }
+    },
+    "Block_11": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 19.0, 1.0, 0.0 ]
+        }
+      }
+    },
+    "Block_12": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 24.0, 3.0, 0.0 ]
+        }
+      }
+    },
+    "Block_13": {
+      "Template": "../../Assets/Templates/FinalObjects/terrain_obj.json",
+      "Components": {
+        "TransformComponent": {
+          "Position": [ 22.0, 5.0, 0.0 ]
         }
       }
     }

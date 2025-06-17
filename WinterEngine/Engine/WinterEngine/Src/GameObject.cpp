@@ -113,6 +113,11 @@ const GameObject* GameObject::GetChild(uint32_t index) const
 	return mChildren[index];
 }
 
+std::vector<GameObject*> GameObject::GetChildren()
+{
+	return mChildren;
+}
+
 void GameObject::SetParent(GameObject* parent)
 {
 	mParent = parent;

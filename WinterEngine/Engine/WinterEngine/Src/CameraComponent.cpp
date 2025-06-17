@@ -52,6 +52,22 @@ void CameraComponent::Deserialize(const rapidjson::Value& value)
 	{
 		mCamera.SetDirection(readValue);
 	}
+	std::string modeString;
+	if (SaveUtil::ReadString("Mode", modeString, value))
+	{
+		if (modeString == "Orthographic")
+		{
+			mCamera.SetMode(Graphics::Camera::ProjectionMode::Orthographic);
+			float width = value["Width"].GetFloat();
+			float height = value["Height"].GetFloat();
+			mCamera.SetSize(width, height);
+		}
+		else
+		{
+			mCamera.SetMode(Graphics::Camera::ProjectionMode::Perspective);
+
+		}
+	}
 }
 
 void CameraComponent::Serialize(rapidjson::Document& doc, rapidjson::Value& value, const rapidjson::Value& original)

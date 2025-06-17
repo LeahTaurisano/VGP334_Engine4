@@ -28,6 +28,7 @@ namespace WinterEngine
 		void AddChild(GameObject* child);
 		GameObject* GetChild(uint32_t index);
 		const GameObject* GetChild(uint32_t index) const;
+		std::vector<GameObject*> GetChildren();
 
 		void SetParent(GameObject* parent);
 		GameObject* GetParent();

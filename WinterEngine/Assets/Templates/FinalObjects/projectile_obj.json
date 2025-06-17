@@ -23,7 +23,7 @@
       "Mass": 0.0,
       "ColliderData": {
         "Shape": "Sphere",
-        "Radius": 0.25
+        "Radius": 0.025
       }
     },
     "CustomProjectileComponent": {

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "CustomTypeIds.h"
 
 class CustomSideScrollingComponent : public WinterEngine::Component
@@ -14,5 +13,19 @@ public:
 
 private:
 	WinterEngine::TransformComponent* mTransformComponent = nullptr;
+	using TerrainBlocks = std::vector<WinterEngine::GameObject*>;
+	TerrainBlocks mTerrainBlocks;
+	using TerrainRBComps = std::vector<WinterEngine::RigidBodyComponent*>;
+	TerrainRBComps mTerrainRBComps;
 	float mScrollSpeed = 0.0f;
+	float mTimer = 0.0f;
+
+	enum class Stages
+	{
+		STAGE_1,
+		STAGE_2,
+		STAGE_3,
+		TRANSITION
+	};
+	Stages mCurrentStage = Stages::STAGE_1;
 };

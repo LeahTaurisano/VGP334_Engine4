@@ -93,3 +93,8 @@ void RigidBodyComponent::SetVelocity(const Math::Vector3& velocity)
 {
 	mRigidBody.SetVelocity(velocity);
 }
+
+Math::Vector3 WinterEngine::RigidBodyComponent::GetPosition()
+{
+	return Math::Vector3::Zero;
+}

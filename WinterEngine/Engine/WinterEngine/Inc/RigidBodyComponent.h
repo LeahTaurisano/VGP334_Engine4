@@ -16,6 +16,8 @@ namespace WinterEngine
 		void SetPosition(const Math::Vector3& position);
 		void SetVelocity(const Math::Vector3& velocity);
 
+		Math::Vector3 GetPosition();
+
 	private:
 		friend class PhysicsService;
 		Physics::CollisionShape mCollisionShape;
